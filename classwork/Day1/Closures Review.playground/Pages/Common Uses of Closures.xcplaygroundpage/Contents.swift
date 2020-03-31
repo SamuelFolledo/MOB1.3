@@ -92,7 +92,7 @@ let sortedGuestList = guestList.sorted { (aGuest: Guest, bGuest: Guest) in
 
 /*:
  ## Map
- Map takes an array and applies Think of the **map function as a transforming function:** for example, you can use `map` to convert an array of numbers into an array of strings.
+ Map takes an array and applies the same operation to each element in the collection. Think of the **map function as a transforming function:** for example, you can use `map` to convert an array of numbers into an array of strings.
  
  ### Signature
  
@@ -108,7 +108,6 @@ let sortedGuestList = guestList.sorted { (aGuest: Guest, bGuest: Guest) in
 let lowerCaseLetters = ["a", "z", "b", "x", "c", "y"]
 let upperCaseLetters = lowerCaseLetters.map { (aLetter: String) -> String in
     let upperCaseOfLetter = aLetter.uppercased()
-    
     return upperCaseOfLetter
 }
 
@@ -173,36 +172,41 @@ let namesCombined = guestList.reduce("") { (sentence, aGuest) -> String in
  Practice using the high order functions by completing the following:
  */
 
-//sort these numbers
+//SORT these numbers
 let numbersToSort = [2, 4, 4, 2, 1, 0]
-
-
-//sort the guests by name
+print("Sorted numbers: ", numbersToSort.sorted()) //ascending by default
+print("Sorted numbers: ", numbersToSort.sorted(by: >)) //descending
+//SORT the guests by name
 let guestsToSort = [paola, sven, shuyi, charlie]
+print("Sorted by name: ", guestsToSort.sorted(){ $0.name < $1.name })
+//SORT the guests by age, but in descending order (youngest at the front of the array)
+print("Sorted by age: ", guestsToSort.sorted(){ $0.age < $1.age }) //sort by age ascending (youngest first)
 
 
-//sort the guests by age, but in descending order (youngest at the front of the array)
-print(guestsToSort.sorted(){ $0.age < $1.age }) //sort by age ascending
-
-//filter the guests to only include guests younger than 18 years
-print(guestsToSort.filter{ $0.age < 18 }) //creates an array of guest from guests with age less than 18
-
-//filter the numbers to only include even numbers
+//FILTER the guests to only include guests younger than 18 years
+print("Minors: ", guestsToSort.filter{ $0.age < 18 }) //creates an array of guest from guests with age less than 18
+//FILTER the numbers to only include even numbers
 let numbersToFilter = [2, 1, 1, 5, 6, 7, 10]
-print(numbersToFilter.filter{ $0 % 2 == 0 })
+print("Even numbers: ", numbersToFilter.filter{ $0 % 2 == 0 }) //filter numbers to only have even numbers
 
-//map the numbers to be double their values (e.g. 5 gets mapped to 10)
+//MAP the numbers to be double their values (e.g. 5 gets mapped to 10)
 let numbersToDouble = [2, 4, 6, 8]
-
-
-//map the numbers into strings
+print("Doubled values: ", numbersToDouble.map { $0 * 2 }) //doubles each values in numbersToDouble array
+//MAP the numbers into strings
 let numbersToMapIntoStrings = [2, 4, 5, 1, 2, 2]
+print("Int as String: ", numbersToDouble.map { "\($0)" }) //map the numbersToDouble into strings
 
-
-//reduce the numbers into a sum, but exclude negative numbers from the sum. Thus, your reduce closure should reduce this array to equal 10
+//REDUCE the numbers into a sum, but exclude negative numbers from the sum. Thus, your reduce closure should reduce this array to equal 10
 let numbersToSum = [-2, -5, -4, 5, -5, 5]
-
-
+let positiveNumbersSum = numbersToSum.reduce(0) { (result, num) -> Int in //sum positive numbers in numbersToSum
+    return num > 0 ? result + num : result //if num > 0, increment result, else just return result
+}
+print("Sum of positives: ", positiveNumbersSum)
+let numbersSum = numbersToSum.reduce(0) {
+    return $1 > 0 ? $0 + $1 : $0
+}
+print("Sum of positives: ", numbersSum)
+print("Sum of positives: ", numbersToSum.filter{$0 > 0}.reduce(0, +)) //filter and reduce chaining: filter positive and sum
 /*:
  We've learned more on how to use closures in our code, specifically with higher order functions, in order to clean up our code and make it more efficient.
  
