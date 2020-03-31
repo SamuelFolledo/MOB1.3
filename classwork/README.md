@@ -25,6 +25,8 @@
 <a name="day1"></a>
 ## Day 1. [Closures and callbacks](https://github.com/Make-School-Courses/MOB-1.3-Dynamic-iOS-Apps/blob/master/Lessons/Lesson2/Lesson2.md)
 ### Topics
+- **Closure** - which is **non escaping** by default, *will perform a task and wait* until that task is done, meanwhile, **escaping** closure *will perform a task (asynchronously) and not  wait* until that task is done, going back to the main thread, and allowing user interactions and stuff while the task is being completed.
+- Higher order functions
 
 ### CW
 
