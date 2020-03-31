@@ -1,10 +1,10 @@
-# [MOB1.3: Dynamic iOS Apps](https://make-school-courses.github.io/MOB-1.3-Dynamic-iOS-Apps/#/) Classworks and Homeworks
+# [MOB1.3:](https://make-school-courses.github.io/MOB-1.3-Dynamic-iOS-Apps/#/) Classworks and Homeworks
 
 ## Table Of Contents:
 1. [Closures and callbacks](#day1)
 2. [Protocols & Delegation](#day2)
 3. [Communication patterns](#day3)
-4. Memory Management[](#day4)
+4. [Memory Management[](#day4)
 5. [JSON in iOS](#day5)
 6. [URLSession](#day6)
 7. [Requests with authentication](#day7)
