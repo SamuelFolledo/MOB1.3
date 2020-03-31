@@ -145,5 +145,5 @@ Day 14. [](#day14)
 
 <a name="importantReferences"></a>
 ## Important References
-- Day 2's [Size Classes Tutorial](https://github.com/Make-School-Courses/MOB-1.2-Introduction-to-iOS-Development/blob/master/Lessons/02-AutoLayout/assignments/sizeclasses.md)
+- 
 
