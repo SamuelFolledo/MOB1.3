@@ -29,6 +29,7 @@
 - Higher order functions
 
 ### CW
+- [Closures Review](https://github.com/SamuelFolledo/MOB1.3/tree/master/classwork/Day1/Closures%20Review.playground)
 
 ---
 
