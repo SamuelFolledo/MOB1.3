@@ -4,7 +4,7 @@
 1. [Closures and callbacks](#day1)
 2. [Protocols & Delegation](#day2)
 3. [Communication patterns](#day3)
-4. [Memory Management[](#day4)
+4. [Memory Management](#day4)
 5. [JSON in iOS](#day5)
 6. [URLSession](#day6)
 7. [Requests with authentication](#day7)
