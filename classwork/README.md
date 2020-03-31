@@ -31,27 +31,27 @@
 ##### Sorted
 - call sorted on an array it will return a new array that sorted in ascending order.
 - elements in the array need to conform to the Comparable protocol.
-
+```
     print("Sorted numbers: ", numbersToSort.sorted()) //ascending by default
     print("Sorted numbers: ", numbersToSort.sorted(by: >)) //descending
     print("Sorted by name: ", guestsToSort.sorted(){ $0.name < $1.name })
     print("Sorted by age: ", guestsToSort.sorted(){ $0.age < $1.age }) //sort by age ascending (youngest first)
-
+```
 ##### Filter
 - the filter method will return an array that has only elements that pass your filter specified in your closure.
-
+```
     print("Minors: ", guestsToSort.filter{ $0.age < 18 }) //creates an array of guest from guests with age less than 18
     print("Even numbers: ", numbersToFilter.filter{ $0 % 2 == 0 }) //filter numbers to only have even numbers
-
+```
 ##### Map
 - iterates through the array that is calling it and changes each element of the array based on the closure passed to the method.
-
+```
     print("Doubled values: ", numbersToDouble.map { $0 * 2 }) //doubles each values in numbersToDouble array
     print("Int as String: ", numbersToDouble.map { "\($0)" }) //map the numbersToDouble into strings
-
+```
 ##### Reduce
 - The reduce function allows you to combine all the elements in an array and return an object of any type (generics!!!!)
-
+```
     let positiveNumbersSum = numbersToSum.reduce(0) { (result, num) -> Int in 
         return num > 0 ? result + num : result
     }
@@ -60,9 +60,9 @@
     print("Sum of positives: ", numbersToSum.reduce(0) { return $1 > 0 ? $0 + $1 : $0 })
     //OR
     print("Sum of positives: ", numbersToSum.filter{$0 > 0}.reduce(0, +)) //filter and reduce chaining: filter positive and sum
-    
-    ### CW
-    - [Closures Review](https://github.com/SamuelFolledo/MOB1.3/tree/master/classwork/Day1/Closures%20Review.playground)
+```
+### CW
+- [Closures Review](https://github.com/SamuelFolledo/MOB1.3/tree/master/classwork/Day1/Closures%20Review.playground)
 
 ---
 
