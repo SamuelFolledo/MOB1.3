@@ -1,20 +1,22 @@
 # [MOB1.3:](https://make-school-courses.github.io/MOB-1.3-Dynamic-iOS-Apps/#/) Classworks and Homeworks
 
 ## Table Of Contents:
-Day 1. [Closures and callbacks](#day1)
-Day 2. [Protocols & Delegation](#day2)
-Day 3. [Communication patterns](#day3)
-Day 4. [Memory Management](#day4)
-Day 5. [JSON in iOS](#day5)
-Day 6. [URLSession](#day6)
-Day 7. [Requests with authentication](#day7)
-Day 8. [Lab + Intro final project](#day8)
-Day 9. [Firebase](#day9)
-Day 10. [](#day10)
-Day 11. [](#day11)
-Day 12. [](#day12)
-Day 13. [](#day13)
-Day 14. [](#day14)
+| Class |     Date     |                 Topics                  |  
+|:-----:|:------------:|:---------------------------------------:|
+|  1  |  Mon, Mar 30   | [Closures and callbacks](#day1)                |  
+|  2  |  Wed, Apr 1    | [Protocols & Delegation](#day2)               |
+|  3  |  Mon, Apr 6    | [Communication patterns](#day3)               |  
+|  4  |  Wed, Apr 8    | [Memory Management](#day4)                    |
+|  5  |  Mon, Apr 13   | [JSON in iOS](#day5)                           |              
+|  6  |  Wed, Apr 15   | [URLSession](#day6)     |
+|  7  |  Mon, Apr 20   | [Requests with authentication](#day7)          |
+|  8  |  Wed, Apr 22   | [Lab + Intro final project](#day8)                    |
+|  9  |  Mon, Apr 27   | [Firebase](#day9)                              |
+|  10 |  Wed, Apr 30   | [Building a networking layer Pt 1](#day10)      |       
+|  11 |  Mon, May 4    | [Building a networking layer Pt 2](#day11)      |                  
+|  12 |  Wed, May 6    | [Lab + Review](#day12)                            |                    
+|  13 |  Mon, May 11   | [Final Exam](#day13)                              |                    
+|  14 |  Wed, May 13   | [Presentations](#day14)                           |      
 -  [Important References](#importantReferences)
 
 
