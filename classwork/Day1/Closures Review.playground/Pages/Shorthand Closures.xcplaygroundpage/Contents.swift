@@ -89,42 +89,16 @@ add(newGuest: eric) { print("There are \($0 - 1) guests ahead of me") }
  Rewrite your sorting closure to be a single line of code
  */
 
-
+let samuel = Guest(name: "Samuel", age: 24)
+add(newGuest: samuel) { print("There are \($0 - 1) guests ahead of me") }
 //copy and paste your sorting closure here and rewrite it to be a single line of code
-
+//SORT the guests by name
+print("Sorted by name: ", listOfGuests.sorted(){ $0.name < $1.name })
+//SORT the guests by age, but in descending order (youngest at the front of the array)
+print("Sorted by age: ", listOfGuests.sorted(){ $0.age < $1.age })
 
 /*:
  Great work on becoming a master of closure optimizations! While these are not always needed, they can significantly clean up your code.
  */
 
 //: [Previous](@previous) | [Next](@next)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import Foundation

@@ -27,6 +27,18 @@
 ### Topics
 - **Closure** - which is **non escaping** by default, *will perform a task and wait* until that task is done, meanwhile, **escaping** closure *will perform a task (asynchronously) and not  wait* until that task is done, going back to the main thread, and allowing user interactions and stuff while the task is being completed.
     - **Apple's definition**: "Closures are self-contained blocks of functionality that can be passed around and used in your code."
+- **[Trailing Closure](https://www.hackingwithswift.com/example-code/language/what-is-trailing-closure-syntax)**
+```
+    func greetThenRunClosure(name: String, closure: () -> ()) {
+        print("Hello, \(name)!")
+        closure()
+    }
+    
+    greetThenRunClosure(name: "Paul") {
+        print("The closure was run")
+    }
+```
+
 - **[Higher order functions](https://medium.com/@Dougly/higher-order-functions-in-swift-sorted-map-filter-reduce-dff60b5b6adf)**
 ##### Sorted
 - call sorted on an array it will return a new array that sorted in ascending order.
