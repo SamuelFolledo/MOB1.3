@@ -1,4 +1,4 @@
-# Dynamic iOS Apps
+# [Dynamic iOS Apps](https://github.com/Make-School-Courses/MOB-1.3-Dynamic-iOS-Apps)
 
 ## Course Description
 
