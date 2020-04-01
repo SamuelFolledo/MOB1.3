@@ -9,7 +9,9 @@
 import UIKit
 
 // Step 1: Adding protocol
-
+protocol ChangeColorProtocol {
+    func didUpdateColor(color: UIColor)
+}
 
 class SecondViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var thirdOption: ColorView!
     
     //Step 2: Creating a delegate property.
+    var delegate: ChangeColorProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +34,9 @@ class SecondViewController: UIViewController {
     
     @objc func viewTapped(_ tapGesture: UITapGestureRecognizer) {
         //Step 3: Adding the delegate method call
-        
         self.dismiss(animated: true) {
             let circle = tapGesture.view as? ColorView
-            
+            self.delegate.didUpdateColor(color: circle!.mainColor)
         }
     }
 }
