@@ -78,29 +78,29 @@
 		33DC91BB243543ED00EDCC7C /* Day2-Protocols and Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				33DC91BE2435515400EDCC7C /* DelegateDemo */,
-				33DC91BF2435516300EDCC7C /* DelegateStarter */,
+				33DC91BE2435515400EDCC7C /* DelegateStarter */,
+				33DC91BF2435516300EDCC7C /* DelegateDemo */,
 			);
 			path = "Day2-Protocols and Delegates";
 			sourceTree = "<group>";
 		};
-		33DC91BE2435515400EDCC7C /* DelegateDemo */ = {
+		33DC91BE2435515400EDCC7C /* DelegateStarter */ = {
 			isa = PBXGroup;
 			children = (
 				33DC91AB2435419700EDCC7C /* BossVC.swift */,
 				33DC91BC2435449200EDCC7C /* InternVC.swift */,
 			);
-			path = DelegateDemo;
+			path = DelegateStarter;
 			sourceTree = "<group>";
 		};
-		33DC91BF2435516300EDCC7C /* DelegateStarter */ = {
+		33DC91BF2435516300EDCC7C /* DelegateDemo */ = {
 			isa = PBXGroup;
 			children = (
 				33DC91C12435517A00EDCC7C /* ColorView.swift */,
 				33DC91C02435517A00EDCC7C /* FirstViewController.swift */,
 				33DC91C22435517B00EDCC7C /* SecondViewController.swift */,
 			);
-			path = DelegateStarter;
+			path = DelegateDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
