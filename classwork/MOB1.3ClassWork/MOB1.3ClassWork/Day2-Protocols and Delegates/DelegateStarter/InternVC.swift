@@ -18,7 +18,12 @@ class InternVC: UIViewController {
 
     @IBAction func requestTask(_ sender: Any) {
         let bossVC = storyboard?.instantiateViewController(withIdentifier: "BossVC") as! BossVC
-        bossVC.selectionDelegate = self
+//        bossVC.selectionDelegate = self //need for delegate & protocol
+        bossVC.buttonAction = { [weak self] (text) -> () in //1h20m, [weak self] is a capture list
+            self?.selectionLabel.text = text
+            bossVC.dismiss(animated: true, completion: nil)
+        }
+        
         present(bossVC, animated: true, completion: nil)
     }
     
