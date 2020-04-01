@@ -101,7 +101,7 @@
 		33DC91BF2435516300EDCC7C /* DelegateDemo */ = {
 			isa = PBXGroup;
 			children = (
-				33DC91C12435517A00EDCC7C /* ColorView.swift */,
+				33DC91CB24355CB900EDCC7C /* View */,
 				33DC91C02435517A00EDCC7C /* FirstViewController.swift */,
 				33DC91C22435517B00EDCC7C /* SecondViewController.swift */,
 			);
@@ -115,6 +115,14 @@
 				33DC91C72435571800EDCC7C /* Day1SecondVC.swift */,
 			);
 			path = CompletionHandler;
+			sourceTree = "<group>";
+		};
+		33DC91CB24355CB900EDCC7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33DC91C12435517A00EDCC7C /* ColorView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
