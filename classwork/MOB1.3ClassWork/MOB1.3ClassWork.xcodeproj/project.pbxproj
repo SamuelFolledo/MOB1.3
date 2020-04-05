@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		330CBF68243A534000F9B464 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF67243A534000F9B464 /* Closures.swift */; };
 		330CBF6A243A5A1B00F9B464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330CBF69243A5A1B00F9B464 /* Main.storyboard */; };
+		330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF6C243A608A00F9B464 /* GifExtension.swift */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		330CBF67243A534000F9B464 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
 		330CBF69243A5A1B00F9B464 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		330CBF6C243A608A00F9B464 /* GifExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifExtension.swift; sourceTree = "<group>"; };
 		33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOB1.3ClassWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC91A72435419700EDCC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DC91A92435419700EDCC7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = "Day7- Request with Authentication";
 			sourceTree = "<group>";
 		};
+		330CBF6B243A5F5800F9B464 /* Project- GiphySearch */ = {
+			isa = PBXGroup;
+			children = (
+				330CBF6C243A608A00F9B464 /* GifExtension.swift */,
+			);
+			path = "Project- GiphySearch";
+			sourceTree = "<group>";
+		};
 		33DC919B2435419600EDCC7C = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 				33DC91A72435419700EDCC7C /* AppDelegate.swift */,
 				33DC91A92435419700EDCC7C /* SceneDelegate.swift */,
 				330CBF69243A5A1B00F9B464 /* Main.storyboard */,
+				330CBF6B243A5F5800F9B464 /* Project- GiphySearch */,
 				330CBF61243A520700F9B464 /* Day1- Closures and Callbacks */,
 				33DC91BB243543ED00EDCC7C /* Day2-Protocols and Delegates */,
 				330CBF62243A523600F9B464 /* Day3- Communication Patterns */,
@@ -261,6 +272,7 @@
 				330CBF68243A534000F9B464 /* Closures.swift in Sources */,
 				33DC91BD2435449200EDCC7C /* InternVC.swift in Sources */,
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
+				330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
