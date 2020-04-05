@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Day1VC: UIViewController {
+class Day2VC: UIViewController {
     
     private var textLabel: UILabel = {
         let label = UILabel()
@@ -43,7 +43,7 @@ class Day1VC: UIViewController {
     }
     
     @objc private func showViewController(sender: UIButton) {
-        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "Day1SecondVC") as? Day1SecondVC {
+        if let secondVC = storyboard?.instantiateViewController(withIdentifier: "Day2SecondVC") as? Day2SecondVC {
             
             secondVC.buttonAction = { [weak self] (text) -> () in //1h20m, [weak self] is a capture list
                 self?.textLabel.text = text

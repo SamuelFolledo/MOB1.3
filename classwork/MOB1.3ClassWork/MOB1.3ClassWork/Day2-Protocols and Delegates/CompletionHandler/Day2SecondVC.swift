@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  Day2SecondVC.swift
 //  tutorial_closures
 //
 //  Created by Dava on 5/6/17.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Day1SecondVC: UIViewController {
+class Day2SecondVC: UIViewController {
     
     private lazy var textField: UITextField = {
         let txt = UITextField()
         txt.returnKeyType = .done
-        txt.backgroundColor = .groupTableViewBackground
+        txt.backgroundColor = .black
         txt.layer.cornerRadius = 3.0
         txt.translatesAutoresizingMaskIntoConstraints = false
         txt.delegate = self
@@ -60,7 +60,7 @@ class Day1SecondVC: UIViewController {
 }
 
 //MARK: UITextField Delegate
-extension Day1SecondVC: UITextFieldDelegate {
+extension Day2SecondVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hideKeyboard()
         return false
@@ -68,7 +68,7 @@ extension Day1SecondVC: UITextFieldDelegate {
 }
 
 //MARK: Private Methods
-private extension Day1SecondVC {
+private extension Day2SecondVC {
     func addConstraints() {
         // textfield
         textField.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true

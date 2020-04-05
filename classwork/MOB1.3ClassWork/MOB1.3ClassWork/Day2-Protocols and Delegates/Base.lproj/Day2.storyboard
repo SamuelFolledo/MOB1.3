@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="-596" y="860"/>
         </scene>
-        <!--Day1VC-->
+        <!--Day2VC-->
         <scene sceneID="T8b-nW-lCS">
             <objects>
-                <viewController id="lJr-pe-Wm0" customClass="Day1VC" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lJr-pe-Wm0" customClass="Day2VC" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z3u-hU-zvl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="-596" y="1652"/>
         </scene>
-        <!--Day1 SecondVC-->
+        <!--Day2 SecondVC-->
         <scene sceneID="OTo-db-y1H">
             <objects>
-                <viewController storyboardIdentifier="Day1SecondVC" id="2Fa-lB-Wi6" customClass="Day1SecondVC" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Day2SecondVC" id="2Fa-lB-Wi6" customClass="Day2SecondVC" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLF-uw-gkp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
