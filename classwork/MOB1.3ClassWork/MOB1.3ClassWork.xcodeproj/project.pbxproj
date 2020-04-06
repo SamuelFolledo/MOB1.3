@@ -13,6 +13,7 @@
 		330CBF6F243A749C00F9B464 /* Giphy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330CBF6E243A749C00F9B464 /* Giphy.storyboard */; };
 		330CBF71243AC4F200F9B464 /* GiphySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF70243AC4F200F9B464 /* GiphySearchVC.swift */; };
 		330CBF73243AC50400F9B464 /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF72243AC50400F9B464 /* GifCell.swift */; };
+		330CBF78243AF3F100F9B464 /* GifNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF77243AF3F100F9B464 /* GifNetwork.swift */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -34,6 +35,7 @@
 		330CBF6E243A749C00F9B464 /* Giphy.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Giphy.storyboard; sourceTree = "<group>"; };
 		330CBF70243AC4F200F9B464 /* GiphySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphySearchVC.swift; sourceTree = "<group>"; };
 		330CBF72243AC50400F9B464 /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
+		330CBF77243AF3F100F9B464 /* GifNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifNetwork.swift; sourceTree = "<group>"; };
 		33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOB1.3ClassWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC91A72435419700EDCC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DC91A92435419700EDCC7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				330CBF6E243A749C00F9B464 /* Giphy.storyboard */,
+				330CBF76243AF3CA00F9B464 /* Model */,
 				330CBF74243AC50900F9B464 /* Controllers */,
 				330CBF75243AC51500F9B464 /* Views */,
 				330CBF6C243A608A00F9B464 /* GifExtension.swift */,
@@ -129,6 +132,14 @@
 				330CBF72243AC50400F9B464 /* GifCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		330CBF76243AF3CA00F9B464 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				330CBF77243AF3F100F9B464 /* GifNetwork.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		33DC919B2435419600EDCC7C = {
@@ -297,6 +308,7 @@
 				33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */,
 				33DC91C52435517B00EDCC7C /* SecondViewController.swift in Sources */,
 				330CBF68243A534000F9B464 /* Closures.swift in Sources */,
+				330CBF78243AF3F100F9B464 /* GifNetwork.swift in Sources */,
 				33DC91BD2435449200EDCC7C /* InternVC.swift in Sources */,
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
 				330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */,

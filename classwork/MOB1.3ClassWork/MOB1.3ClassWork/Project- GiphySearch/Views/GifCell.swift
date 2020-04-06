@@ -9,6 +9,9 @@
 import UIKit
 
 class GifCell: UITableViewCell {
+    
+    static let identifier: String = "gifCell"
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         // Add views
