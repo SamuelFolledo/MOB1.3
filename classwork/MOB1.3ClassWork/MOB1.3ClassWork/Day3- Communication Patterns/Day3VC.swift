@@ -29,7 +29,7 @@ class Day3VC: UIViewController {
         //Add observer
         NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification(_:)), name: Notification.Name("receivedNotification"), object: nil)
         
-        
+        //Triggers observer that is listening to "receivedNotification"
         NotificationCenter.default.post(name: Notification.Name("receivedNotification"), object: self)
     }
     
