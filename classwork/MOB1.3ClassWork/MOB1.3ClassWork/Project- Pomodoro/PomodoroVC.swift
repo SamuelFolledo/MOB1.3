@@ -1,5 +1,5 @@
 //
-//  PomodoroSecondVC.swift
+//  PomodoroVC.swift
 //  MOB1.3ClassWork
 //
 //  Created by Macbook Pro 15 on 4/6/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PomodoroSecondVC: UIViewController {
+class PomodoroVC: UIViewController {
     
     // There are two types of time intervals:
     //   1. Pomodoro: working on a task for 25 minutes without interruptions
