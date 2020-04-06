@@ -36,7 +36,6 @@ class GiphySearchVC: UIViewController {
     func fetchGifs(for searchText: String) {
         network.fetchGifs(searchTerm: searchText) { results in
             if results != nil {
-                print(results!.gifs.count)
                 self.gifs = results!.gifs
                 self.tableView.reloadData()
             }
@@ -48,11 +47,12 @@ class GiphySearchVC: UIViewController {
 // MARK: - Tableview functions
 extension GiphySearchVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return gifs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: GifCell.identifier) as! GifCell
+        cell.gif = gifs[indexPath.row]
         return cell
     }
 }
