@@ -14,6 +14,7 @@
 		330CBF71243AC4F200F9B464 /* GiphySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF70243AC4F200F9B464 /* GiphySearchVC.swift */; };
 		330CBF73243AC50400F9B464 /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF72243AC50400F9B464 /* GifCell.swift */; };
 		330CBF78243AF3F100F9B464 /* GifNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF77243AF3F100F9B464 /* GifNetwork.swift */; };
+		330CBF7A243AF50500F9B464 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF79243AF50500F9B464 /* Gif.swift */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -36,6 +37,7 @@
 		330CBF70243AC4F200F9B464 /* GiphySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphySearchVC.swift; sourceTree = "<group>"; };
 		330CBF72243AC50400F9B464 /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
 		330CBF77243AF3F100F9B464 /* GifNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifNetwork.swift; sourceTree = "<group>"; };
+		330CBF79243AF50500F9B464 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOB1.3ClassWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC91A72435419700EDCC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DC91A92435419700EDCC7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		330CBF76243AF3CA00F9B464 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				330CBF79243AF50500F9B464 /* Gif.swift */,
 				330CBF77243AF3F100F9B464 /* GifNetwork.swift */,
 			);
 			path = Model;
@@ -313,6 +316,7 @@
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
 				330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */,
 				330CBF73243AC50400F9B464 /* GifCell.swift in Sources */,
+				330CBF7A243AF50500F9B464 /* Gif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
