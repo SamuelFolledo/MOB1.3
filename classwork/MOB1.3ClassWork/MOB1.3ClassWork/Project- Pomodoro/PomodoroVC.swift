@@ -26,8 +26,8 @@ class PomodoroVC: UIViewController {
     var currentInterval = 0
     
     // Setting the duration of each type of interval in seconds, for testing purposes they are short.
-    let pomodoroDuration = 5 // Real: 25 * 60
-    let breakDuration = 3 //Real:  5 * 60
+    let pomodoroDuration = 2 // Real: 25 * 60
+    let breakDuration = 1 //Real:  5 * 60
     
     var timeRemaining = 0
     
@@ -170,6 +170,7 @@ class PomodoroVC: UIViewController {
         } else {
             // If all intervals are complete, reset all.
             // ACTION: Post Notification
+            NotificationCenter.default.post(name: Notification.Name(kPOMODORONOTIFICATION), object: self)
             resetAll()
         }
     }
