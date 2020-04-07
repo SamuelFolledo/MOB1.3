@@ -18,7 +18,7 @@
 		330CBF7C243BE26300F9B464 /* Day3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF7B243BE26300F9B464 /* Day3VC.swift */; };
 		330CBF7F243BF7B200F9B464 /* PomodoroFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF7E243BF7B200F9B464 /* PomodoroFirstVC.swift */; };
 		330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */; };
-		330CBF83243BF87900F9B464 /* Pomodoro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330CBF82243BF87900F9B464 /* Pomodoro.storyboard */; };
+		330CBF85243BF98C00F9B464 /* Pomodoro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330CBF84243BF98C00F9B464 /* Pomodoro.storyboard */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -45,7 +45,7 @@
 		330CBF7B243BE26300F9B464 /* Day3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3VC.swift; sourceTree = "<group>"; };
 		330CBF7E243BF7B200F9B464 /* PomodoroFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroFirstVC.swift; sourceTree = "<group>"; };
 		330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
-		330CBF82243BF87900F9B464 /* Pomodoro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pomodoro.storyboard; sourceTree = "<group>"; };
+		330CBF84243BF98C00F9B464 /* Pomodoro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pomodoro.storyboard; sourceTree = "<group>"; };
 		33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOB1.3ClassWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC91A72435419700EDCC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DC91A92435419700EDCC7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		330CBF7D243BF77C00F9B464 /* Project- Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
-				330CBF82243BF87900F9B464 /* Pomodoro.storyboard */,
+				330CBF84243BF98C00F9B464 /* Pomodoro.storyboard */,
 				330CBF7E243BF7B200F9B464 /* PomodoroFirstVC.swift */,
 				330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */,
 			);
@@ -307,12 +307,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				330CBF85243BF98C00F9B464 /* Pomodoro.storyboard in Resources */,
 				33DC91B42435419A00EDCC7C /* LaunchScreen.storyboard in Resources */,
 				33DC91B12435419A00EDCC7C /* Assets.xcassets in Resources */,
 				330CBF6F243A749C00F9B464 /* Giphy.storyboard in Resources */,
 				33DC91AF2435419700EDCC7C /* Day2.storyboard in Resources */,
 				330CBF6A243A5A1B00F9B464 /* Main.storyboard in Resources */,
-				330CBF83243BF87900F9B464 /* Pomodoro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
