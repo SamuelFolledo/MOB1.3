@@ -26,8 +26,8 @@ class PomodoroVC: UIViewController {
     var currentInterval = 0
     
     // Setting the duration of each type of interval in seconds, for testing purposes they are short.
-    let pomodoroDuration = 10 // Real: 25 * 60
-    let breakDuration = 5 //Real:  5 * 60
+    let pomodoroDuration = 5 // Real: 25 * 60
+    let breakDuration = 3 //Real:  5 * 60
     
     var timeRemaining = 0
     
@@ -41,13 +41,13 @@ class PomodoroVC: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         //ACTION: Set button actions for startPauseButton, resetButton and closeButton
-       
-
+        startPauseButton.addTarget(self, action: #selector(self.startPauseButtonPressed(_:)), for: .touchUpInside)
+        resetButton.addTarget(self, action: #selector(self.resetButtonPressed(_:)), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(self.closeButtonPressed(_:)), for: .touchUpInside)
         resetAll()
         
     }
@@ -71,27 +71,32 @@ class PomodoroVC: UIViewController {
     // MARK: Button Actions
     
     @objc func startPauseButtonPressed(_ sender: UIButton) {
-        if timer.isValid {
-         // Timer running
-         // ACTION: Change the button’s title to “Continue”
-         // ACTION: Enable the reset button
-         // ACTION: Pause the timer, call the method pauseTimer
+        if timer.isValid { // Timer running
+            // ACTION: Change the button’s title to “Continue”
+            startPauseButton.setTitle("Continue", for: .normal)
+            // ACTION: Enable the reset button
+            resetButton.isEnabled = true
+            // ACTION: Pause the timer, call the method pauseTimer
+            pauseTimer()
             
-           
         } else {
-         // Timer stopped or hasn't started
-         // ACTION: Change the button’s title to “Pause”
-         // ACTION: Disable the Reset button
+            // Timer stopped or hasn't started
+            // ACTION: Change the button’s title to “Pause”
+            startPauseButton.setTitle("Pause", for: .normal)
+            // ACTION: Disable the Reset button
+            resetButton.isEnabled = false
             
-           
             
             if currentInterval == 0 && timeRemaining == pomodoroDuration {
                 // We are at the start of a cycle
                 // ACTION: begin the cycle of intervals
+                startNextInterval()
                 
             } else {
                 // We are in the middle of a cycle
                 // ACTION: Resume the timer.
+                messageLabel.text = intervals[currentInterval - 1] == IntervalType.Pomodoro ? "Pomodoro session. Do not disturb." : "Taking a break"
+                startTimer()
                 
             }
         }
@@ -104,17 +109,19 @@ class PomodoroVC: UIViewController {
         }
         
         //ACTION: call the reset method
-        
+        resetAll()
     }
-
-    //ACTION: add the method to dismiss the view controller
     
+    //ACTION: add the method to dismiss the view controller
+    @objc func closeButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // MARK: Time Manipulation
     
     func startTimer() {
         //ACTION: create the timer, selector should be runTimer()
-        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimer), userInfo: nil, repeats: true) //start timer
     }
     
     @objc func runTimer() {
@@ -168,12 +175,11 @@ class PomodoroVC: UIViewController {
     }
     
     // MARK: Formatters
-    
     // Input: number of seconds, returns it as (minutes, seconds).
     func minutesAndSeconds(from seconds: Int) -> (Int, Int) {
         return (seconds / 60, seconds % 60)
     }
-
+    
     // Input: number, returns a string of 2 digits with leading zero if needed
     func formatNumber(_ number: Int) -> String {
         return String(format: "%02d", number)

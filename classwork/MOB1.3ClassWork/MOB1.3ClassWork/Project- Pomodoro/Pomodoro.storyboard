@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1884" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--PomodoroVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="PomodoroVC" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -173,6 +173,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gd1-lF-Gfh"/>
+                    <connections>
+                        <outlet property="closeButton" destination="2Xv-wQ-gIJ" id="usw-S2-1IG"/>
+                        <outlet property="messageLabel" destination="nyJ-ub-ilo" id="Xih-4v-yYD"/>
+                        <outlet property="resetButton" destination="Thw-yE-HTz" id="5ys-9t-ma0"/>
+                        <outlet property="startPauseButton" destination="5fA-Fc-Q6h" id="J2y-LF-al8"/>
+                        <outlet property="timeLabel" destination="Sj7-wG-EYT" id="WxZ-63-2Bc"/>
+                        <outletCollection property="tomatoImages" destination="hml-bc-mf6" collectionClass="NSMutableArray" id="Npn-cL-Yfr"/>
+                        <outletCollection property="tomatoImages" destination="dH1-23-4NJ" collectionClass="NSMutableArray" id="mBb-Su-bK0"/>
+                        <outletCollection property="tomatoImages" destination="eZD-RL-5vi" collectionClass="NSMutableArray" id="lIa-Ai-XIj"/>
+                        <outletCollection property="tomatoImages" destination="Cx8-45-xyc" collectionClass="NSMutableArray" id="wL2-yr-orP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
