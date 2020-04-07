@@ -26,8 +26,8 @@ class PomodoroVC: UIViewController {
     var currentInterval = 0
     
     // Setting the duration of each type of interval in seconds, for testing purposes they are short.
-    let pomodoroDuration = 2 // Real: 25 * 60
-    let breakDuration = 1 //Real:  5 * 60
+    let pomodoroDuration = 25 * 60 // Real: 25 * 60
+    let breakDuration = 5 * 60 //Real:  5 * 60
     
     var timeRemaining = 0
     
