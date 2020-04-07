@@ -28,10 +28,10 @@ class PomodoroFirstVC: UIViewController {
     }
     
     fileprivate func setupObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(receivedNotification(_:)), name: Notification.Name(kPOMODORONOTIFICATION), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pomodoroUpdated(_:)), name: Notification.Name(kPOMODORONOTIFICATION), object: nil)
     }
     
-    @objc func receivedNotification(_ notification:Notification) {
+    @objc func pomodoroUpdated(_ notification:Notification) {
         // ACTION: Update value of completed cycles
         completedCycles += 1
         // ACTION: Update message label
