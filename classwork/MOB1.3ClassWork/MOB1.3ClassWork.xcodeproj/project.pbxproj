@@ -20,10 +20,10 @@
 		330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */; };
 		330CBF85243BF98C00F9B464 /* Pomodoro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330CBF84243BF98C00F9B464 /* Pomodoro.storyboard */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
-		335E27DF243EA069003C8BE3 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DC243EA069003C8BE3 /* Captain.swift */; };
-		335E27E0243EA069003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
-		335E27E1243EA069003C8BE3 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DE243EA069003C8BE3 /* CrewMember.swift */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
+		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
+		335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DE243EA069003C8BE3 /* CrewMember.swift */; };
+		335E27E7243EA202003C8BE3 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DC243EA069003C8BE3 /* Captain.swift */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -348,22 +348,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				33DC91C92435571800EDCC7C /* Day2SecondVC.swift in Sources */,
+				335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */,
 				330CBF7F243BF7B200F9B464 /* PomodoroFirstVC.swift in Sources */,
 				330CBF7C243BE26300F9B464 /* Day3VC.swift in Sources */,
 				33DC91C42435517B00EDCC7C /* ColorView.swift in Sources */,
-				335E27E1243EA069003C8BE3 /* CrewMember.swift in Sources */,
 				335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */,
 				330CBF71243AC4F200F9B464 /* GiphySearchVC.swift in Sources */,
 				33DC91C32435517B00EDCC7C /* FirstViewController.swift in Sources */,
 				33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */,
 				330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */,
+				335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */,
 				33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */,
+				335E27E7243EA202003C8BE3 /* Captain.swift in Sources */,
 				33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */,
 				33DC91C52435517B00EDCC7C /* SecondViewController.swift in Sources */,
-				335E27E0243EA069003C8BE3 /* Starship.swift in Sources */,
 				330CBF68243A534000F9B464 /* Closures.swift in Sources */,
 				330CBF78243AF3F100F9B464 /* GifNetwork.swift in Sources */,
-				335E27DF243EA069003C8BE3 /* Captain.swift in Sources */,
 				33DC91BD2435449200EDCC7C /* InternVC.swift in Sources */,
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
 				330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */,

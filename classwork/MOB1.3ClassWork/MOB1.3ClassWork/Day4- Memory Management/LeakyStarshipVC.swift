@@ -8,6 +8,17 @@
 
 import UIKit
 
+/*
+ Day 4 Links:
+    - class = https://make-school-courses.github.io/MOB-1.3-Dynamic-iOS-Apps/#/Lessons/Lesson5/README
+    - Closure and Retain Cycle Article = https://www.avanderlee.com/swift/weak-self/
+    - LeakyStarship repo = https://github.com/VanderDev1/LeakyStarship
+    - Using the Debug Memory Graph Tool Tutorial = https://github.com/Make-School-Courses/MOB-1.3-Dynamic-iOS-Apps/blob/master/Lessons/Lesson5/Mem_Graph_Tutorial/MemGraphTutorial.md
+ 
+ 
+ 
+ */
+
 class LeakyStarshipVC: UIViewController {
     
     override func viewDidLoad() {
