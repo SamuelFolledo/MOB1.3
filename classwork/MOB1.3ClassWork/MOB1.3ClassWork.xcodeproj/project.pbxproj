@@ -23,6 +23,7 @@
 		33106EFA24451E6000BFCBFD /* Day5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33106EF924451E6000BFCBFD /* Day5.storyboard */; };
 		33106EFC24451E7500BFCBFD /* FilmLocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106EFB24451E7500BFCBFD /* FilmLocationsVC.swift */; };
 		33106EFE24451FC100BFCBFD /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 33106EFD24451FC000BFCBFD /* locations.json */; };
+		33106F022445238B00BFCBFD /* FilmEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106F012445238B00BFCBFD /* FilmEntry.swift */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
@@ -59,6 +60,7 @@
 		33106EF924451E6000BFCBFD /* Day5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day5.storyboard; sourceTree = "<group>"; };
 		33106EFB24451E7500BFCBFD /* FilmLocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmLocationsVC.swift; sourceTree = "<group>"; };
 		33106EFD24451FC000BFCBFD /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
+		33106F012445238B00BFCBFD /* FilmEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntry.swift; sourceTree = "<group>"; };
 		335E27DA243EA027003C8BE3 /* Day4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day4.storyboard; sourceTree = "<group>"; };
 		335E27DC243EA069003C8BE3 /* Captain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
 		335E27DD243EA069003C8BE3 /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				33106EF7244518DD00BFCBFD /* Day5-JsonValidator.swift */,
 				33106EF924451E6000BFCBFD /* Day5.storyboard */,
 				33106EFB24451E7500BFCBFD /* FilmLocationsVC.swift */,
+				33106F012445238B00BFCBFD /* FilmEntry.swift */,
 				33106EFD24451FC000BFCBFD /* locations.json */,
 			);
 			path = "Day5- JSON in iOS";
@@ -380,6 +383,7 @@
 				330CBF68243A534000F9B464 /* Closures.swift in Sources */,
 				330CBF78243AF3F100F9B464 /* GifNetwork.swift in Sources */,
 				33DC91BD2435449200EDCC7C /* InternVC.swift in Sources */,
+				33106F022445238B00BFCBFD /* FilmEntry.swift in Sources */,
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
 				330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */,
 				33106EFC24451E7500BFCBFD /* FilmLocationsVC.swift in Sources */,
