@@ -19,6 +19,10 @@
 		330CBF7F243BF7B200F9B464 /* PomodoroFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF7E243BF7B200F9B464 /* PomodoroFirstVC.swift */; };
 		330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */; };
 		330CBF85243BF98C00F9B464 /* Pomodoro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330CBF84243BF98C00F9B464 /* Pomodoro.storyboard */; };
+		33106EF8244518DD00BFCBFD /* Day5-JsonValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106EF7244518DD00BFCBFD /* Day5-JsonValidator.swift */; };
+		33106EFA24451E6000BFCBFD /* Day5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33106EF924451E6000BFCBFD /* Day5.storyboard */; };
+		33106EFC24451E7500BFCBFD /* FilmLocationsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106EFB24451E7500BFCBFD /* FilmLocationsVC.swift */; };
+		33106EFE24451FC100BFCBFD /* locations.json in Resources */ = {isa = PBXBuildFile; fileRef = 33106EFD24451FC000BFCBFD /* locations.json */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
@@ -51,6 +55,10 @@
 		330CBF7E243BF7B200F9B464 /* PomodoroFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroFirstVC.swift; sourceTree = "<group>"; };
 		330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroVC.swift; sourceTree = "<group>"; };
 		330CBF84243BF98C00F9B464 /* Pomodoro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pomodoro.storyboard; sourceTree = "<group>"; };
+		33106EF7244518DD00BFCBFD /* Day5-JsonValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day5-JsonValidator.swift"; sourceTree = "<group>"; };
+		33106EF924451E6000BFCBFD /* Day5.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day5.storyboard; sourceTree = "<group>"; };
+		33106EFB24451E7500BFCBFD /* FilmLocationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmLocationsVC.swift; sourceTree = "<group>"; };
+		33106EFD24451FC000BFCBFD /* locations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locations.json; sourceTree = "<group>"; };
 		335E27DA243EA027003C8BE3 /* Day4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day4.storyboard; sourceTree = "<group>"; };
 		335E27DC243EA069003C8BE3 /* Captain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
 		335E27DD243EA069003C8BE3 /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
@@ -112,6 +120,10 @@
 		330CBF64243A529900F9B464 /* Day5- JSON in iOS */ = {
 			isa = PBXGroup;
 			children = (
+				33106EF7244518DD00BFCBFD /* Day5-JsonValidator.swift */,
+				33106EF924451E6000BFCBFD /* Day5.storyboard */,
+				33106EFB24451E7500BFCBFD /* FilmLocationsVC.swift */,
+				33106EFD24451FC000BFCBFD /* locations.json */,
 			);
 			path = "Day5- JSON in iOS";
 			sourceTree = "<group>";
@@ -331,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				330CBF85243BF98C00F9B464 /* Pomodoro.storyboard in Resources */,
+				33106EFA24451E6000BFCBFD /* Day5.storyboard in Resources */,
 				33DC91B42435419A00EDCC7C /* LaunchScreen.storyboard in Resources */,
 				335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */,
+				33106EFE24451FC100BFCBFD /* locations.json in Resources */,
 				33DC91B12435419A00EDCC7C /* Assets.xcassets in Resources */,
 				330CBF6F243A749C00F9B464 /* Giphy.storyboard in Resources */,
 				33DC91AF2435419700EDCC7C /* Day2.storyboard in Resources */,
@@ -358,6 +372,7 @@
 				33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */,
 				330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */,
 				335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */,
+				33106EF8244518DD00BFCBFD /* Day5-JsonValidator.swift in Sources */,
 				33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */,
 				335E27E7243EA202003C8BE3 /* Captain.swift in Sources */,
 				33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */,
@@ -367,6 +382,7 @@
 				33DC91BD2435449200EDCC7C /* InternVC.swift in Sources */,
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
 				330CBF6D243A608A00F9B464 /* GifExtension.swift in Sources */,
+				33106EFC24451E7500BFCBFD /* FilmLocationsVC.swift in Sources */,
 				330CBF73243AC50400F9B464 /* GifCell.swift in Sources */,
 				330CBF7A243AF50500F9B464 /* Gif.swift in Sources */,
 			);
