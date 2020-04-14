@@ -14,11 +14,11 @@ struct FilmEntryCodable: Codable {
     var releaseYear: MultiType
     var title: String
     
-    enum CodingKeys:String, CodingKey {
-      case firstActor = "actor_1"
-      case locations = "locations"
-      case releaseYear = "release_year"
-      case title = "title"
+    enum CodingKeys: String, CodingKey {
+        case firstActor = "actor_1"
+        case locations = "locations"
+        case releaseYear = "release_year"
+        case title = "title"
     }
 }
 
