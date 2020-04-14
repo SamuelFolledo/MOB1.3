@@ -12,7 +12,7 @@ class FilmLocationsVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var films:[FilmEntry] = []
+    var films:[FilmEntryCodable] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,27 +23,43 @@ class FilmLocationsVC: UIViewController {
     fileprivate func setup() {
         tableView.delegate = self
         tableView.dataSource = self
-        getDataFromFile("locations")
+        getDataFromFileUsingCodable("locations")
     }
     
     //method name suggestion
     func getDataFromFile(_ fileName: String){
         let path = Bundle.main.path(forResource: fileName, ofType: ".json")
         if let path = path {
-          let url = URL(fileURLWithPath: path)
-          let contents = try? Data(contentsOf: url)
-          do {
-            if let data = contents,
-            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String:Any]] {
-                for film in jsonResult {
-                    guard let film = FilmEntry(json: film) else { continue }
-                    films.append(film)
+            let url = URL(fileURLWithPath: path)
+            let contents = try? Data(contentsOf: url)
+            if let data = contents{
+                let decoder = JSONDecoder()
+                do {
+                    let filmsFromJSON = try decoder.decode([FilmEntryCodable].self, from: data)
+                    films = filmsFromJSON
+                    tableView.reloadData()
+                } catch {
+                    print("Parsing Failed")
                 }
-                tableView.reloadData()
             }
-          } catch {
-            print("Error deserializing JSON: \(error)")
-          }
+        }
+    }
+    
+    func getDataFromFileUsingCodable(_ fileName:String) {
+        let path = Bundle.main.path(forResource: fileName, ofType: ".json")
+        if let path = path {
+            let url = URL(fileURLWithPath: path)
+            let contents = try? Data(contentsOf: url)
+            if let data = contents {
+                let decoder = JSONDecoder()
+                do {
+                    let filmsFromJSON = try decoder.decode([FilmEntryCodable].self, from: data)
+                    films = filmsFromJSON
+                    tableView.reloadData()
+                } catch {
+                    print("Parsing Failed")
+                }
+            }
         }
     }
 }
@@ -60,9 +76,11 @@ extension FilmLocationsVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "locationCell") //to have detailTextLabel
         let movie = films[indexPath.row]
         cell.textLabel?.text = movie.locations
+        cell.detailTextLabel?.text = "Movie: \"\(movie.title)\" (\(movie.releaseYear.value))"
         return cell
     }
     
