@@ -37,6 +37,7 @@ class FilmLocationsVC: UIViewController {
                     let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String:Any]] {
                     //              print(jsonResult)
                     for film in jsonResult {
+                        print(film)
                         //                    let firstActor = film["actor_1"] as? String ?? ""
                         //                    let locations = film["locations"] as? String  ?? ""
                         //                    let releaseYear = film["release_year"] as? String  ?? ""
