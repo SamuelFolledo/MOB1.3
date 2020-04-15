@@ -31,6 +31,8 @@
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
 		335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DE243EA069003C8BE3 /* CrewMember.swift */; };
 		335E27E7243EA202003C8BE3 /* Captain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DC243EA069003C8BE3 /* Captain.swift */; };
+		339BDD352447C6880028EEBA /* Day6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339BDD342447C6880028EEBA /* Day6.storyboard */; };
+		339BDD372447C6C70028EEBA /* NasaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BDD362447C6C70028EEBA /* NasaVC.swift */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -70,6 +72,8 @@
 		335E27DD243EA069003C8BE3 /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		335E27DE243EA069003C8BE3 /* CrewMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrewMember.swift; sourceTree = "<group>"; };
 		335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakyStarshipVC.swift; sourceTree = "<group>"; };
+		339BDD342447C6880028EEBA /* Day6.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day6.storyboard; sourceTree = "<group>"; };
+		339BDD362447C6C70028EEBA /* NasaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaVC.swift; sourceTree = "<group>"; };
 		33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOB1.3ClassWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC91A72435419700EDCC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DC91A92435419700EDCC7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 		330CBF65243A52A800F9B464 /* Day6- URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				339BDD342447C6880028EEBA /* Day6.storyboard */,
+				339BDD362447C6C70028EEBA /* NasaVC.swift */,
 			);
 			path = "Day6- URLSession";
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				33DC91B12435419A00EDCC7C /* Assets.xcassets in Resources */,
 				330CBF6F243A749C00F9B464 /* Giphy.storyboard in Resources */,
 				33DC91AF2435419700EDCC7C /* Day2.storyboard in Resources */,
+				339BDD352447C6880028EEBA /* Day6.storyboard in Resources */,
 				330CBF6A243A5A1B00F9B464 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +404,7 @@
 				330CBF73243AC50400F9B464 /* GifCell.swift in Sources */,
 				330CBF7A243AF50500F9B464 /* Gif.swift in Sources */,
 				33106F042445314100BFCBFD /* FilmEntryCodable.swift in Sources */,
+				339BDD372447C6C70028EEBA /* NasaVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

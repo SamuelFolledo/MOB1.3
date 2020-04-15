@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="imA-Th-gZN">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--NasaVC-->
+        <scene sceneID="Pxz-3U-Mzz">
+            <objects>
+                <viewController id="imA-Th-gZN" customClass="NasaVC" customModule="MOB1_3ClassWork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dBF-2e-Mu8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zXF-vK-vB5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="K5e-1t-cUl" firstAttribute="trailing" secondItem="zXF-vK-vB5" secondAttribute="trailing" id="7fq-fK-ULJ"/>
+                            <constraint firstItem="zXF-vK-vB5" firstAttribute="leading" secondItem="K5e-1t-cUl" secondAttribute="leading" id="FUL-12-dfB"/>
+                            <constraint firstItem="zXF-vK-vB5" firstAttribute="top" secondItem="K5e-1t-cUl" secondAttribute="top" id="eZR-QL-m6R"/>
+                            <constraint firstItem="K5e-1t-cUl" firstAttribute="bottom" secondItem="zXF-vK-vB5" secondAttribute="bottom" id="njF-th-unU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="K5e-1t-cUl"/>
+                    </view>
+                    <connections>
+                        <outlet property="nasaDailyImageView" destination="zXF-vK-vB5" id="THx-cN-b0F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nrt-nk-kn4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="98"/>
+        </scene>
+    </scenes>
+</document>
