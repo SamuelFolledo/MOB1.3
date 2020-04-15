@@ -15,9 +15,11 @@ class NasaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchHeaderData()
+//        fetchHeaderData()
         //TODO: Call function to fetch image data here
-        fetchNasaDailyImage()
+        self.navigationController?.title = "NASA Daily Picture"
+        fetchDailyImageUrl()
+//        fetchNasaDailyImage()
     }
 
     //MARK: Data Fetch functions
@@ -42,15 +44,54 @@ class NasaVC: UIViewController {
         dataTask.resume()
     }
 
+    func fetchDailyImageUrl() {
+        //        https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY
+        //TODO: Create session configuration here
+        let defaultSession = URLSession(configuration: .default)
+        
+        //TODO: Create URL (...and send request and process response in closure...)
+        if let url = URL(string: "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY") {
+            
+            let request = URLRequest(url: url)
+            
+            // Create Data Task...
+            let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+                guard error == nil else {
+                    print ("error: ", error!)
+                    return
+                }
+                print("IMAGE data is: ", data!)
+
+                do {
+                    if let data = data,
+                        let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any] {
+                        print("JSON RESULT = ", jsonResult, "\n")
+                        DispatchQueue.main.async {
+                            let explanation = jsonResult["explanation"] as? String ?? ""
+                            print("Explanation = ", explanation)
+                            let title = jsonResult["title"] as? String ?? ""
+                            print(title)
+                            self.title = title
+                            let hdurl = jsonResult["hdurl"] as? String ?? ""
+                            self.fetchNasaDailyImage(hdurl: hdurl)
+                        }
+                    }
+                } catch {
+                    print("Error deserializing JSON: \(error)")
+                }
+            })
+            dataTask.resume()
+        }
+    }
     
 // CODE BASE for In-Class Activity I
-    func fetchNasaDailyImage() {
+    func fetchNasaDailyImage(hdurl: String) {
         
         //TODO: Create session configuration here
         let defaultSession = URLSession(configuration: .default)
         
         //TODO: Create URL (...and send request and process response in closure...)
-        if let url = URL(string: "https://apod.nasa.gov/apod/image/2004/MVP_Aspinall_2048.jpg") {
+        if let url = URL(string: hdurl) {
             
            //TODO: Create Request here
             let request = URLRequest(url: url)
@@ -61,20 +102,16 @@ class NasaVC: UIViewController {
                     print ("error: ", error!)
                     return
                 }
-                
-                guard data != nil else {
-                      print("No data object")
-                      return
-                }
-                print("data is: ", data!)
-                print("response is: ", response!)
+//                print("data is: ", data!)
+//                print("response is: ", response!)
                 
                 if let data = data, let image = UIImage(data: data) {
                     DispatchQueue.main.async {
-                        
                           //TODO: Insert downloaded image into imageView
                         self.nasaDailyImageView.image = image
                     }
+                } else {
+                    print("No Data fetched")
                 }
             })
             dataTask.resume()
