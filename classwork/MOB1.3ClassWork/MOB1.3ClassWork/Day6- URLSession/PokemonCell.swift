@@ -11,7 +11,9 @@ import UIKit
 class PokemonCell: UITableViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var shinyImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
