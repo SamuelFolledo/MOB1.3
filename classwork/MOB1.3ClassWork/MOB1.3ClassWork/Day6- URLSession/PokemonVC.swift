@@ -160,6 +160,7 @@ class PokemonVC: UIViewController {
     var pokemons: [Pokemon] = []
     let pokeapiURL: String = "https://pokeapi.co/api/v2"
     let limit: Int = 20 //limit on how many pokemons to fetch at a time
+    var fromIndex: Int = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -177,7 +178,7 @@ class PokemonVC: UIViewController {
     
     func fetchPokemons() { //fetch 20 pokemons aat a time
         let defaultSession = URLSession(configuration: .default)
-        if let url = URL(string: "\(pokeapiURL)/pokemon/?limit=\(limit)&offset=\(pokemons.count)") {
+        if let url = URL(string: "\(pokeapiURL)/pokemon/?limit=\(limit)&offset=\(fromIndex)") {
             let request = URLRequest(url: url)
             let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
                 guard error == nil else {
@@ -192,7 +193,7 @@ class PokemonVC: UIViewController {
 //                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
 //                    print("JSON RESULT = ", jsonResult, "\n")
                     let pokemonsFromJson = try JSONDecoder().decode(Root.self, from: data)
-                    DispatchQueue.main.async {
+//                    DispatchQueue.main.async {
                         for pokemonResult in pokemonsFromJson.results {
                             let pokemon = Pokemon(name: pokemonResult.name, url: pokemonResult.url)
 //                            pokemon.formUrl = pokemon.url.insert(str: "-form", after: "pokemon")
@@ -203,13 +204,14 @@ class PokemonVC: UIViewController {
                                 }
                                 DispatchQueue.main.async {
                                     self.pokemons.append(pokemon)
+                                    self.fromIndex = self.pokemons.count
 //                                    print("\(pokemon.name): \(pokemon.imageUrl) and \(pokemon.shinyImageUrl)")
                                     self.pokemons.sort(){ $0.id < $1.id }
                                     self.tableView.reloadData()
                                 }
                             }
                         }
-                    }
+//                    }
                 } catch {
                     print("Error deserializing JSON: \(error)")
                 }
@@ -237,7 +239,7 @@ extension PokemonVC: UITableViewDataSource {
         cell.nameLabel.text = pokemon.name
         cell.imgView.image = pokemon.image
         cell.shinyImageView.image = pokemon.shinyImage
-        cell.idLabel.text = String(pokemon.id)
+        cell.idLabel.text = "\(pokemon.id)"
         if indexPath.row == pokemons.count - 1 { //if last cell, fetch more pokemons
             fetchPokemons()
         }
