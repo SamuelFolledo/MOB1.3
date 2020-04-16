@@ -23,17 +23,48 @@ struct Pokemon {
 class PokemonVC: UIViewController {
     
     var pokemons: [PokemonURL] = []
+    let pokeAPI: String = "https://pokeapi.co/api/v2/"
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
+        fetchPokemons()
     }
     
     fileprivate func setupTable() {
+        self.title = "Pokemon API"
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func fetchPokemons() {
+        let defaultSession = URLSession(configuration: .default)
+        if let url = URL(string: "\(pokeAPI)/pokemon/1") {
+            let request = URLRequest(url: url)
+            let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+                guard error == nil else {
+                    print ("error: ", error!)
+                    return
+                }
+                
+                do {
+                    if let data = data,
+                        let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any] {
+                        print("JSON RESULT = ", jsonResult, "\n")
+                        DispatchQueue.main.async {
+                            let name = jsonResult["name"] as? String ?? ""
+                            print("NAME IS \(name)")
+//                            self.fetchNasaDailyImage(hdurl: hdurl)
+                        }
+                    }
+                } catch {
+                    print("Error deserializing JSON: \(error)")
+                }
+            })
+            dataTask.resume()
+        }
     }
 
 }
