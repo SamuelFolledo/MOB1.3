@@ -206,7 +206,7 @@ class PokemonVC: UIViewController {
                                     self.pokemons.append(pokemon)
                                     self.fromIndex = self.pokemons.count
 //                                    print("\(pokemon.name): \(pokemon.imageUrl) and \(pokemon.shinyImageUrl)")
-                                    self.pokemons.sort(){ $0.id < $1.id }
+//                                    self.pokemons.sort(){ $0.id < $1.id }
                                     self.tableView.reloadData()
                                 }
                             }
@@ -239,7 +239,7 @@ extension PokemonVC: UITableViewDataSource {
         cell.nameLabel.text = pokemon.name
         cell.imgView.image = pokemon.image
         cell.shinyImageView.image = pokemon.shinyImage
-        cell.idLabel.text = "\(pokemon.id)"
+        cell.idLabel.text = "\(String(indexPath.row)) \(String(pokemon.id))"
         if indexPath.row == pokemons.count - 1 { //if last cell, fetch more pokemons
             fetchPokemons()
         }
