@@ -26,6 +26,7 @@
 		33106F022445238B00BFCBFD /* FilmEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106F012445238B00BFCBFD /* FilmEntry.swift */; };
 		33106F042445314100BFCBFD /* FilmEntryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106F032445314100BFCBFD /* FilmEntryCodable.swift */; };
 		33106F062445335800BFCBFD /* MultiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106F052445335800BFCBFD /* MultiType.swift */; };
+		3333D61B244E508F003A3CD2 /* PokemonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D61A244E508F003A3CD2 /* PokemonModels.swift */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
@@ -70,6 +71,7 @@
 		33106F012445238B00BFCBFD /* FilmEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntry.swift; sourceTree = "<group>"; };
 		33106F032445314100BFCBFD /* FilmEntryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntryCodable.swift; sourceTree = "<group>"; };
 		33106F052445335800BFCBFD /* MultiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiType.swift; sourceTree = "<group>"; };
+		3333D61A244E508F003A3CD2 /* PokemonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModels.swift; sourceTree = "<group>"; };
 		335E27DA243EA027003C8BE3 /* Day4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day4.storyboard; sourceTree = "<group>"; };
 		335E27DC243EA069003C8BE3 /* Captain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
 		335E27DD243EA069003C8BE3 /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				339BDD342447C6880028EEBA /* Day6.storyboard */,
 				339BDD782447D7500028EEBA /* PokemonVC.swift */,
+				3333D61A244E508F003A3CD2 /* PokemonModels.swift */,
 				339BDD7A2447D8BD0028EEBA /* PokemonCell.swift */,
 				339BDD362447C6C70028EEBA /* NasaVC.swift */,
 			);
@@ -397,6 +400,7 @@
 				335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */,
 				330CBF71243AC4F200F9B464 /* GiphySearchVC.swift in Sources */,
 				33DC91C32435517B00EDCC7C /* FirstViewController.swift in Sources */,
+				3333D61B244E508F003A3CD2 /* PokemonModels.swift in Sources */,
 				33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */,
 				330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */,
 				335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */,
