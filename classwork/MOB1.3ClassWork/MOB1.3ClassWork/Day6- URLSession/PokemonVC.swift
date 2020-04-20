@@ -14,6 +14,7 @@ class PokemonVC: UIViewController {
     let pokeapiURL: String = "https://pokeapi.co/api/v2"
     let limit: Int = 20 //limit on how many pokemons to fetch at a time
     var fromIndex: Int = 0
+    var nextUrl: String = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,46 +31,43 @@ class PokemonVC: UIViewController {
     }
     
     func fetchPokemons() { //fetch 20 pokemons aat a time
-        let defaultSession = URLSession(configuration: .default)
-        if let url = URL(string: "\(pokeapiURL)/pokemon/?limit=\(limit)&offset=\(fromIndex)") {
-            let request = URLRequest(url: url)
-            let dataTask = defaultSession.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-                guard error == nil else {
-                    print ("error: ", error!)
-                    return
-                }
-                guard let data = data else {
-                    print("No data")
-                    return
-                }
-                do {
-//                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
-//                    print("JSON RESULT = ", jsonResult, "\n")
-                    let pokemonsFromJson = try JSONDecoder().decode(Root.self, from: data)
-//                    DispatchQueue.main.async {
-                        for pokemonResult in pokemonsFromJson.results {
-                            let pokemon = Pokemon(name: pokemonResult.name, url: pokemonResult.url)
-//                            pokemon.formUrl = pokemon.url.insert(str: "-form", after: "pokemon")
-                            pokemon.fetchPokemonDetails { (error) in
-                                if let error = error {
-                                    print("Error:", error)
-                                    return
-                                }
-                                DispatchQueue.main.async {
-                                    self.pokemons.append(pokemon)
-                                    self.fromIndex = self.pokemons.count
-//                                    print("\(pokemon.name): \(pokemon.imageUrl) and \(pokemon.shinyImageUrl)")
-                                    self.pokemons.sort(){ $0.id < $1.id }
-                                    self.tableView.reloadData()
-                                }
-                            }
+        if nextUrl == "" { //check if next url is empty
+            nextUrl = "\(pokeapiURL)/pokemon/?limit=\(limit)&offset=\(fromIndex)"
+        }
+        fetchFromUrl(nextUrl) { (data, error) in
+            if let error = error {
+                print(error)
+            }
+            guard let data = data else {
+                print("No data")
+                return
+            }
+            do {
+                //                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+                //                    print("JSON RESULT = ", jsonResult, "\n")
+                let pokemonsFromJson = try JSONDecoder().decode(Root.self, from: data)
+                self.nextUrl = pokemonsFromJson.next
+                //                    DispatchQueue.main.async {
+                for pokemonResult in pokemonsFromJson.results {
+                    let pokemon = Pokemon(name: pokemonResult.name, url: pokemonResult.url)
+                    //                            pokemon.formUrl = pokemon.url.insert(str: "-form", after: "pokemon")
+                    pokemon.fetchPokemonDetails { (error) in
+                        if let error = error {
+                            print("Error:", error)
+                            return
                         }
-//                    }
-                } catch {
-                    print("Error deserializing JSON: \(error)")
+                        DispatchQueue.main.async {
+                            self.pokemons.append(pokemon)
+                            self.fromIndex = self.pokemons.count
+                            //                                    print("\(pokemon.name): \(pokemon.imageUrl) and \(pokemon.shinyImageUrl)")
+//                            self.pokemons.sort(){ $0.id < $1.id }
+                            self.tableView.reloadData()
+                        }
+                    }
                 }
-            })
-            dataTask.resume()
+            } catch {
+                print("Error deserializing JSON: \(error)")
+            }
         }
     }
 }

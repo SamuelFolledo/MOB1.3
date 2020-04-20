@@ -27,6 +27,10 @@
 		33106F042445314100BFCBFD /* FilmEntryCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106F032445314100BFCBFD /* FilmEntryCodable.swift */; };
 		33106F062445335800BFCBFD /* MultiType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33106F052445335800BFCBFD /* MultiType.swift */; };
 		3333D61B244E508F003A3CD2 /* PokemonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D61A244E508F003A3CD2 /* PokemonModels.swift */; };
+		3333D61D244E5D63003A3CD2 /* FlickrVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3333D61C244E5D63003A3CD2 /* FlickrVC.storyboard */; };
+		3333D628244E5E92003A3CD2 /* FlickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D61F244E5D73003A3CD2 /* FlickerVC.swift */; };
+		3333D629244E5E9A003A3CD2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D621244E5D73003A3CD2 /* PhotoCell.swift */; };
+		3333D62A244E5E9D003A3CD2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D622244E5D73003A3CD2 /* Photo.swift */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
@@ -72,6 +76,10 @@
 		33106F032445314100BFCBFD /* FilmEntryCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmEntryCodable.swift; sourceTree = "<group>"; };
 		33106F052445335800BFCBFD /* MultiType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiType.swift; sourceTree = "<group>"; };
 		3333D61A244E508F003A3CD2 /* PokemonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModels.swift; sourceTree = "<group>"; };
+		3333D61C244E5D63003A3CD2 /* FlickrVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FlickrVC.storyboard; sourceTree = "<group>"; };
+		3333D61F244E5D73003A3CD2 /* FlickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickerVC.swift; sourceTree = "<group>"; };
+		3333D621244E5D73003A3CD2 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		3333D622244E5D73003A3CD2 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		335E27DA243EA027003C8BE3 /* Day4.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Day4.storyboard; sourceTree = "<group>"; };
 		335E27DC243EA069003C8BE3 /* Captain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Captain.swift; sourceTree = "<group>"; };
 		335E27DD243EA069003C8BE3 /* Starship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
@@ -164,6 +172,9 @@
 		330CBF66243A52B300F9B464 /* Day7- Request with Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				3333D61C244E5D63003A3CD2 /* FlickrVC.storyboard */,
+				3333D61E244E5D73003A3CD2 /* controllers */,
+				3333D620244E5D73003A3CD2 /* model */,
 			);
 			path = "Day7- Request with Authentication";
 			sourceTree = "<group>";
@@ -213,6 +224,23 @@
 				330CBF80243BF7BE00F9B464 /* PomodoroVC.swift */,
 			);
 			path = "Project- Pomodoro";
+			sourceTree = "<group>";
+		};
+		3333D61E244E5D73003A3CD2 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3333D61F244E5D73003A3CD2 /* FlickerVC.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3333D620244E5D73003A3CD2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				3333D621244E5D73003A3CD2 /* PhotoCell.swift */,
+				3333D622244E5D73003A3CD2 /* Photo.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		335E27E4243EA126003C8BE3 /* Model */ = {
@@ -373,6 +401,7 @@
 				33106EFA24451E6000BFCBFD /* Day5.storyboard in Resources */,
 				33DC91B42435419A00EDCC7C /* LaunchScreen.storyboard in Resources */,
 				335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */,
+				3333D61D244E5D63003A3CD2 /* FlickrVC.storyboard in Resources */,
 				33106EFE24451FC100BFCBFD /* locations.json in Resources */,
 				33DC91B12435419A00EDCC7C /* Assets.xcassets in Resources */,
 				330CBF6F243A749C00F9B464 /* Giphy.storyboard in Resources */,
@@ -403,15 +432,18 @@
 				3333D61B244E508F003A3CD2 /* PokemonModels.swift in Sources */,
 				33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */,
 				330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */,
+				3333D62A244E5E9D003A3CD2 /* Photo.swift in Sources */,
 				335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */,
 				33106EF8244518DD00BFCBFD /* Day5-JsonValidator.swift in Sources */,
 				33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */,
 				335E27E7243EA202003C8BE3 /* Captain.swift in Sources */,
 				33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */,
 				33DC91C52435517B00EDCC7C /* SecondViewController.swift in Sources */,
+				3333D629244E5E9A003A3CD2 /* PhotoCell.swift in Sources */,
 				330CBF68243A534000F9B464 /* Closures.swift in Sources */,
 				330CBF78243AF3F100F9B464 /* GifNetwork.swift in Sources */,
 				33DC91BD2435449200EDCC7C /* InternVC.swift in Sources */,
+				3333D628244E5E92003A3CD2 /* FlickerVC.swift in Sources */,
 				33106F022445238B00BFCBFD /* FilmEntry.swift in Sources */,
 				33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */,
 				33106F062445335800BFCBFD /* MultiType.swift in Sources */,

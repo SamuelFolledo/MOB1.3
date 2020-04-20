@@ -120,10 +120,8 @@ func fetchImage(imageUrl: String, completion: @escaping (_ image: UIImage?, _ er
                 completion(nil, "No data")
                 return
             }
-            //            completion(data, nil)
             if let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    //TODO: Insert downloaded image into imageView
                     completion(image, nil)
                 }
             } else {
