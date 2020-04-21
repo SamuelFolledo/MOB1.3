@@ -10,7 +10,12 @@ import UIKit
 
 class PokemonVC: UIViewController {
     
-    var pokemons: [Pokemon] = []
+    var pokemons: [Pokemon] = [] {
+        didSet {
+            self.pokemons.sort(){ $0.id < $1.id }
+            tableView.reloadData()
+        }
+    }
     let pokeapiURL: String = "https://pokeapi.co/api/v2"
     let limit: Int = 20 //limit on how many pokemons to fetch at a time
     var fromIndex: Int = 0
@@ -50,17 +55,16 @@ class PokemonVC: UIViewController {
                 //                    DispatchQueue.main.async {
                 for pokemonResult in pokemonsFromJson.results {
                     let pokemon = Pokemon(name: pokemonResult.name, url: pokemonResult.url)
-                    //                            pokemon.formUrl = pokemon.url.insert(str: "-form", after: "pokemon")
                     pokemon.fetchPokemonDetails { (error) in
                         if let error = error {
                             print("Error:", error)
                             return
                         }
+                        
                         DispatchQueue.main.async {
                             self.pokemons.append(pokemon)
                             self.fromIndex = self.pokemons.count
                             //                                    print("\(pokemon.name): \(pokemon.imageUrl) and \(pokemon.shinyImageUrl)")
-//                            self.pokemons.sort(){ $0.id < $1.id }
                             self.tableView.reloadData()
                         }
                     }

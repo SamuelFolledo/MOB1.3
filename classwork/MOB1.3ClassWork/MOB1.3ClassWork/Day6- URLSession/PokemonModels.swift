@@ -98,7 +98,7 @@ class Pokemon { //forms in the API
                         self.shinyImage = image!
                     }
                 }
-                completion(nil)
+                completion(nil) //don't wait for image to finish
             } catch {
                 print("Error deserializing JSON: \(error)")
             }
@@ -121,9 +121,9 @@ func fetchImage(imageUrl: String, completion: @escaping (_ image: UIImage?, _ er
                 return
             }
             if let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    completion(image, nil)
-                }
+//                DispatchQueue.main.async {
+                completion(image, nil)
+//                }
             } else {
                 print("No Data fetched")
             }
