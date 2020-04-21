@@ -34,7 +34,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>FlickrVC</string>
+					<string>Day6</string>
 				</dict>
 			</array>
 		</dict>
