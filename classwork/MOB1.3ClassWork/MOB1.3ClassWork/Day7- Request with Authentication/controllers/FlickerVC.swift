@@ -13,7 +13,6 @@ class FlickerVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet var collectionView: UICollectionView!
 
     var photos: [Photo] = []
-    let networkLayer = PhotoFetchService()
     
 //MARK: View Lifecycle functions
     override func viewDidLoad() {
@@ -29,10 +28,11 @@ class FlickerVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let identifier = "PhotoCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                       for: indexPath) as! PhotoCell
+        cell.spinner.startAnimating()
+        cell.spinner.isHidden = false
         return cell
     }
     
@@ -41,7 +41,7 @@ class FlickerVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
         let photo = photos[indexPath.row]
         // Download the image data...
-        self.networkLayer.fetchImage(for: photo, completion: { (result) -> Void in
+        PhotoNetworkLayer.fetchImage(for: photo, completion: { (result) -> Void in
             guard let photoIndex = self.photos.index(where: { $0 === photo }),
                 case let .success(image) = result else {
                     return
@@ -58,7 +58,7 @@ class FlickerVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     
     //MARK: Network calls and JSON processing functions
     private func reloadDataSource() {
-        self.networkLayer.fetchPhotos {
+        PhotoNetworkLayer.fetchPhotos {
             (photoFetchResult) -> Void in
             switch photoFetchResult {
             case let .success(photos):

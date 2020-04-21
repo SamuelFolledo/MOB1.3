@@ -27,26 +27,32 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="1XZ-p9-mIq" customClass="PhotoCell" customModule="MOB1_3ClassWork" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="102.99999999999997" height="83"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vjz-rT-6sa">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="102.99999999999997" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tomato" translatesAutoresizingMaskIntoConstraints="NO" id="4wp-Ja-Amb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="125" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4wp-Ja-Amb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="83"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bVi-PV-NBn">
+                                                    <rect key="frame" x="40" y="31.666666666666671" width="20" height="20"/>
+                                                    <color key="color" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="4wp-Ja-Amb" firstAttribute="leading" secondItem="Vjz-rT-6sa" secondAttribute="leading" id="53W-n8-vJN"/>
+                                                <constraint firstItem="bVi-PV-NBn" firstAttribute="centerY" secondItem="4wp-Ja-Amb" secondAttribute="centerY" id="Up5-Ig-9Es"/>
                                                 <constraint firstAttribute="bottom" secondItem="4wp-Ja-Amb" secondAttribute="bottom" id="fsb-zh-9OC"/>
                                                 <constraint firstAttribute="trailing" secondItem="4wp-Ja-Amb" secondAttribute="trailing" constant="3" id="qsD-nZ-H4U"/>
+                                                <constraint firstItem="bVi-PV-NBn" firstAttribute="centerX" secondItem="4wp-Ja-Amb" secondAttribute="centerX" id="tsG-yV-qA2"/>
                                                 <constraint firstItem="4wp-Ja-Amb" firstAttribute="top" secondItem="Vjz-rT-6sa" secondAttribute="top" id="xeA-Tf-2co"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="128" height="128"/>
                                         <connections>
                                             <outlet property="photoImageView" destination="4wp-Ja-Amb" id="EaQ-HR-Zgm"/>
+                                            <outlet property="spinner" destination="bVi-PV-NBn" id="6mw-3U-85C"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -70,7 +76,4 @@
             <point key="canvasLocation" x="-3" y="130"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="tomato" width="89" height="91"/>
-    </resources>
 </document>

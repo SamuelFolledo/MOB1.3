@@ -26,31 +26,28 @@ enum ImageRequestError: Error {
     case imageCreationError
 }
 
-struct PhotoFetchService {
-    
+struct PhotoNetworkLayer {
     
     //TODO: Insert your API Key here
-    private let APIKey = "f8df0594dd8c418e60514553a08ea56a"
-    private let baseURLString = "https://api.flickr.com/services/rest"
-    private let flickrMethod = "flickr.interestingness.getList"
+    static private let APIKey = "f8df0594dd8c418e60514553a08ea56a"
+    static private let baseURLString = "https://api.flickr.com/services/rest"
+    static private let flickrMethod = "flickr.interestingness.getList"
     
-    let session: URLSession = {
+    static let session: URLSession = {
         let config = URLSessionConfiguration.default
         return URLSession(configuration: config)
     }()
     
-    private let dateFormatter: DateFormatter = {
+    static private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
     
-    func processImageRequest(data: Data?, error: Error?) -> ImageFetchResult {
-        
+    static func processImageRequest(data: Data?, error: Error?) -> ImageFetchResult {
         guard
             let imageData = data,
-            let image = UIImage(data: imageData) else {
-                
+            let image = UIImage(data: imageData) else {                
                 // Could not create an image from data
                 if data == nil {
                     return .failure(error!)
@@ -58,18 +55,14 @@ struct PhotoFetchService {
                     return .failure(ImageRequestError.imageCreationError)
                 }
         }
-        
         return .success(image)
     }
     
-    func fetchImage(for photo: Photo, completion: @escaping (ImageFetchResult) -> Void) {
-        
+    static func fetchImage(for photo: Photo, completion: @escaping (ImageFetchResult) -> Void) {
         guard let photoURL = photo.remoteURL else {
             preconditionFailure("Photo expected to have a remote URL.")
         }
-        
         let request = URLRequest(url: photoURL)
-        
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             
@@ -82,16 +75,12 @@ struct PhotoFetchService {
         task.resume()
     }
     
-    func fetchPhotos(completion: @escaping (PhotoFetchResult) -> Void) {
-        
+    static func fetchPhotos(completion: @escaping (PhotoFetchResult) -> Void) {
         let url = urlBuilder(parameters: ["extras": "url_h,date_taken"])
-        
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request, completionHandler: {
             (data, response, error) -> Void in
-            
             let result = self.processPhotoFetchRequest(data: data, error: error)
-            
             OperationQueue.main.addOperation { //
                 completion(result)
             }
@@ -99,11 +88,9 @@ struct PhotoFetchService {
         task.resume()
     }
     
-    private func urlBuilder(parameters: [String:String]?) -> URL {
+    static private func urlBuilder(parameters: [String:String]?) -> URL {
         var components = URLComponents(string: baseURLString)!
-        
         var queryItems = [URLQueryItem]()
-        
         let baseParams = [
             "method": flickrMethod,
             "format": "json",
@@ -123,23 +110,19 @@ struct PhotoFetchService {
             }
         }
         components.queryItems = queryItems
-        
         return components.url!
     }
     
-    private func processPhotoFetchRequest(data: Data?, error: Error?) -> PhotoFetchResult {
-        
+    static private func processPhotoFetchRequest(data: Data?, error: Error?) -> PhotoFetchResult {
         guard let jsonData = data else {
             return .failure(error!)
         }
         return self.photoItems(fromJSON: jsonData)
     }
     
-    func photoItems(fromJSON data: Data) -> PhotoFetchResult {
-        
+    static func photoItems(fromJSON data: Data) -> PhotoFetchResult {
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-            
             guard
                 let jsonDict = jsonObject as? [AnyHashable:Any],
                 let photos = jsonDict["photos"] as? [String:Any],
@@ -156,7 +139,6 @@ struct PhotoFetchService {
                     processedPhotos.append(photo)
                 }
             }
-            
             if processedPhotos.isEmpty && !photosArray.isEmpty {
                 // unable to parse Photo items. Maybe the JSON formatting has changed
                 return .failure(FlickrAPIError.invalidJSONData)
@@ -167,8 +149,7 @@ struct PhotoFetchService {
         }
     }
     
-    private func createPhotoItem(fromJSON json: [String : Any]) -> Photo? {
-        
+    static private func createPhotoItem(fromJSON json: [String : Any]) -> Photo? {
         guard
             let title = json["title"] as? String,
             let dateAsString = json["datetaken"] as? String,
@@ -181,5 +162,4 @@ struct PhotoFetchService {
         }
         return Photo(title: title, dateTaken: dateTaken as NSDate, photoID: photoID, remoteURL: url)
     }
-    
 }
