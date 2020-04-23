@@ -54,6 +54,7 @@
 		33DC91C52435517B00EDCC7C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91C22435517B00EDCC7C /* SecondViewController.swift */; };
 		33DC91C92435571800EDCC7C /* Day2SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91C72435571800EDCC7C /* Day2SecondVC.swift */; };
 		33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91C82435571800EDCC7C /* Day2VC.swift */; };
+		33E987BF24511BA1006E3666 /* GenericsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E987BE24511BA1006E3666 /* GenericsPlayground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		33DC91C22435517B00EDCC7C /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		33DC91C72435571800EDCC7C /* Day2SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day2SecondVC.swift; sourceTree = "<group>"; };
 		33DC91C82435571800EDCC7C /* Day2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day2VC.swift; sourceTree = "<group>"; };
+		33E987BE24511BA1006E3666 /* GenericsPlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericsPlayground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 				330CBF64243A529900F9B464 /* Day5- JSON in iOS */,
 				330CBF65243A52A800F9B464 /* Day6- URLSession */,
 				330CBF66243A52B300F9B464 /* Day7- Request with Authentication */,
+				33E987BD2450F6D0006E3666 /* Day8- Generics */,
 				33DC91B22435419A00EDCC7C /* LaunchScreen.storyboard */,
 				33DC91B02435419A00EDCC7C /* Assets.xcassets */,
 				33DC91B52435419A00EDCC7C /* Info.plist */,
@@ -348,6 +351,14 @@
 				33DC91C12435517A00EDCC7C /* ColorView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		33E987BD2450F6D0006E3666 /* Day8- Generics */ = {
+			isa = PBXGroup;
+			children = (
+				33E987BE24511BA1006E3666 /* GenericsPlayground.swift */,
+			);
+			path = "Day8- Generics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,6 +460,7 @@
 				33106EF8244518DD00BFCBFD /* Day5-JsonValidator.swift in Sources */,
 				33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */,
 				335E27E7243EA202003C8BE3 /* Captain.swift in Sources */,
+				33E987BF24511BA1006E3666 /* GenericsPlayground.swift in Sources */,
 				33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */,
 				33DC91C52435517B00EDCC7C /* SecondViewController.swift in Sources */,
 				3333D629244E5E9A003A3CD2 /* PhotoCell.swift in Sources */,
