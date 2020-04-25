@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		3333D629244E5E9A003A3CD2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D621244E5D73003A3CD2 /* PhotoCell.swift */; };
 		3333D632244E6618003A3CD2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D630244E6618003A3CD2 /* Photo.swift */; };
 		3333D634244E6630003A3CD2 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D633244E6630003A3CD2 /* NetworkLayer.swift */; };
+		335233FA2453E9640056EA8E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 335233F92453E9640056EA8E /* Kingfisher */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
@@ -56,6 +57,19 @@
 		33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91C82435571800EDCC7C /* Day2VC.swift */; };
 		33E987BF24511BA1006E3666 /* GenericsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E987BE24511BA1006E3666 /* GenericsPlayground.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		335233F72453E8210056EA8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		330CBF67243A534000F9B464 /* Closures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closures.swift; sourceTree = "<group>"; };
@@ -115,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335233FA2453E9640056EA8E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,12 +386,16 @@
 				33DC91A02435419600EDCC7C /* Sources */,
 				33DC91A12435419600EDCC7C /* Frameworks */,
 				33DC91A22435419600EDCC7C /* Resources */,
+				335233F72453E8210056EA8E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MOB1.3ClassWork;
+			packageProductDependencies = (
+				335233F92453E9640056EA8E /* Kingfisher */,
+			);
 			productName = MOB1.3ClassWork;
 			productReference = 33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */;
 			productType = "com.apple.product-type.application";
@@ -405,6 +424,9 @@
 				Base,
 			);
 			mainGroup = 33DC919B2435419600EDCC7C;
+			packageReferences = (
+				335233F82453E9640056EA8E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 33DC91A52435419600EDCC7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -674,6 +696,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		335233F82453E9640056EA8E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		335233F92453E9640056EA8E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 335233F82453E9640056EA8E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33DC919C2435419600EDCC7C /* Project object */;
 }

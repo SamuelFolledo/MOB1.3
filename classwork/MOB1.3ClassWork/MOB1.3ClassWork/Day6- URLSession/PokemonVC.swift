@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PokemonVC: UIViewController {
     
     var pokemons: [Pokemon] = [] {
         didSet {
-            self.pokemons.sort(){ $0.id < $1.id }
-            tableView.reloadData()
+//            self.pokemons.sort(){ $0.id < $1.id }
+//            tableView.reloadData()
         }
     }
     let pokeapiURL: String = "https://pokeapi.co/api/v2"
@@ -48,26 +49,22 @@ class PokemonVC: UIViewController {
                 return
             }
             do {
-                //                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
-                //                    print("JSON RESULT = ", jsonResult, "\n")
+//                let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+//                print("JSON RESULT = ", jsonResult, "\n")
                 let pokemonsFromJson = try JSONDecoder().decode(Root.self, from: data)
                 self.nextUrl = pokemonsFromJson.next
-                //                    DispatchQueue.main.async {
                 for pokemonResult in pokemonsFromJson.results {
                     let pokemon = Pokemon(name: pokemonResult.name, url: pokemonResult.url)
+                    self.pokemons.append(pokemon)
                     pokemon.fetchPokemonDetails { (error) in
                         if let error = error {
                             print("Error:", error)
                             return
                         }
-                        
-                        DispatchQueue.main.async {
-                            self.pokemons.append(pokemon)
-                            self.fromIndex = self.pokemons.count
-                            //                                    print("\(pokemon.name): \(pokemon.imageUrl) and \(pokemon.shinyImageUrl)")
-                            self.tableView.reloadData()
-                        }
                     }
+                }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
             } catch {
                 print("Error deserializing JSON: \(error)")
@@ -90,13 +87,38 @@ extension PokemonVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonCell
         let pokemon = pokemons[indexPath.row]
-        cell.nameLabel.text = pokemon.name
-        cell.imgView.image = pokemon.image
-        cell.shinyImageView.image = pokemon.shinyImage
-        cell.idLabel.text = "\(String(indexPath.row)) \(String(pokemon.id))"
+        cell.populateCell(pokemon: pokemon, indexPathRow: indexPath.row)
         if indexPath.row == pokemons.count - 1 { //if last cell, fetch more pokemons
             fetchPokemons()
         }
+
+//        cell.nameLabel.text = pokemon.name
+//        cell.idLabel.text = "\(String(indexPath.row)) \(String(pokemon.id))"
+//        if indexPath.row == pokemons.count - 1 { //if last cell, fetch more pokemons
+//            fetchPokemons()
+//        }
+//        if let shinyImageUrl = pokemon.shinyImageUrl {
+//            let url = URL(string: shinyImageUrl)
+//            cell.shinyImageView.kf.setImage(with: url)
+////            fetchImage(imageUrl: shinyImageUrl) { (image, error) in
+////                if let error = error {
+////                    print(error)
+////                }
+////                pokemon.shinyImage = image!
+////                cell.shinyImageView?.image = pokemon.shinyImage
+////            }
+//        }
+//        if let frontImageUrl = pokemon.imageUrl {
+//            let url2 = URL(string: frontImageUrl)
+//            cell.imgView.kf.setImage(with: url2)
+////            fetchImage(imageUrl: frontImageUrl) { (image, error) in
+////                if let error = error {
+////                    print(error)
+////                }
+////                pokemon.image = image!
+////                cell.imgView.image = pokemon.image
+////            }
+//        }
         return cell
     }
 }

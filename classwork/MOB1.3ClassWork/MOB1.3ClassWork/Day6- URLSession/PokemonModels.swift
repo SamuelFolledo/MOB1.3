@@ -56,9 +56,11 @@ class Pokemon { //forms in the API
     let url: String!
     let formUrl: String!
     var id: Int = 0
-    var imageUrl: String = ""
+    var imageUrl: String?
+    var shinyImageUrl: String?
+//    var imageUrl: String = ""
     var image: UIImage = UIImage()
-    var shinyImageUrl: String = ""
+//    var shinyImageUrl: String = ""
     var shinyImage: UIImage = UIImage()
     
     init(name: String, url: String) {
@@ -82,22 +84,6 @@ class Pokemon { //forms in the API
                 self.id = pokemonsFromJson.id
                 self.imageUrl = pokemonsFromJson.sprites.front
                 self.shinyImageUrl = pokemonsFromJson.sprites.shinyFront
-                if self.imageUrl != "" {
-                    fetchImage(imageUrl: self.imageUrl) { (image, error) in
-                        if let error = error {
-                            completion(error)
-                        }
-                        self.image = image!
-                    }
-                }
-                if self.shinyImageUrl != "" {
-                    fetchImage(imageUrl: self.shinyImageUrl) { (image, error) in
-                        if let error = error {
-                            completion(error)
-                        }
-                        self.shinyImage = image!
-                    }
-                }
                 completion(nil) //don't wait for image to finish
             } catch {
                 print("Error deserializing JSON: \(error)")
@@ -121,9 +107,9 @@ func fetchImage(imageUrl: String, completion: @escaping (_ image: UIImage?, _ er
                 return
             }
             if let image = UIImage(data: data) {
-//                DispatchQueue.main.async {
-                completion(image, nil)
-//                }
+                DispatchQueue.main.async {
+                    completion(image, nil)
+                }
             } else {
                 print("No Data fetched")
             }

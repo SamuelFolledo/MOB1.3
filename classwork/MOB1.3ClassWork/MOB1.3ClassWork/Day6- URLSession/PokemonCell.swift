@@ -32,5 +32,35 @@ class PokemonCell: UITableViewCell {
         nameLabel.text = ""
         idLabel.text = ""
     }
+    
+    func populateCell(pokemon: Pokemon, indexPathRow: Int) {
+        self.nameLabel.text = pokemon.name
+        
+        self.idLabel.text = "\(String(indexPathRow)) \(String(pokemon.id))"
+        
+        if let shinyImageUrl = pokemon.shinyImageUrl {
+            let url = URL(string: shinyImageUrl)
+            self.shinyImageView.kf.setImage(with: url)
+//            fetchImage(imageUrl: shinyImageUrl) { (image, error) in
+//                if let error = error {
+//                    print(error)
+//                }
+//                pokemon.shinyImage = image!
+//                self.shinyImageView?.image = pokemon.shinyImage
+//            }
+        }
+        
+        if let frontImageUrl = pokemon.imageUrl {
+            let url2 = URL(string: frontImageUrl)
+            self.imgView.kf.setImage(with: url2)
+//            fetchImage(imageUrl: frontImageUrl) { (image, error) in
+//                if let error = error {
+//                    print(error)
+//                }
+//                pokemon.image = image!
+//                self.imgView.image = pokemon.image
+//            }
+        }
+    }
 
 }
