@@ -42,7 +42,7 @@ class FlickerVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         let photo = photos[indexPath.row]
         // Download the image data...
         PhotoNetworkLayer.fetchImage(for: photo, completion: { (result) -> Void in
-            guard let photoIndex = self.photos.index(where: { $0 === photo }),
+            guard let photoIndex = self.photos.firstIndex(where: { $0 === photo }),
                 case let .success(image) = result else {
                     return
             }
