@@ -32,7 +32,6 @@
 		3333D629244E5E9A003A3CD2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D621244E5D73003A3CD2 /* PhotoCell.swift */; };
 		3333D632244E6618003A3CD2 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D630244E6618003A3CD2 /* Photo.swift */; };
 		3333D634244E6630003A3CD2 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3333D633244E6630003A3CD2 /* NetworkLayer.swift */; };
-		335233FA2453E9640056EA8E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 335233F92453E9640056EA8E /* Kingfisher */; };
 		335E27DB243EA027003C8BE3 /* Day4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335E27DA243EA027003C8BE3 /* Day4.storyboard */; };
 		335E27E3243EA11D003C8BE3 /* LeakyStarshipVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27E2243EA11D003C8BE3 /* LeakyStarshipVC.swift */; };
 		335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335E27DD243EA069003C8BE3 /* Starship.swift */; };
@@ -43,6 +42,10 @@
 		339BDD792447D7500028EEBA /* PokemonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BDD782447D7500028EEBA /* PokemonVC.swift */; };
 		339BDD7B2447D8BD0028EEBA /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BDD7A2447D8BD0028EEBA /* PokemonCell.swift */; };
 		339BDD7D244839DF0028EEBA /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339BDD7C244839DF0028EEBA /* String+extensions.swift */; };
+		33A130D1245790A3007F141B /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A130CF24579049007F141B /* Car.swift */; };
+		33A130D424579268007F141B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 33A130D324579268007F141B /* Kingfisher */; };
+		33A130E0245794C2007F141B /* MOB1_3ClassWorkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A130DF245794C2007F141B /* MOB1_3ClassWorkTests.swift */; };
+		33A130E82457A1CA007F141B /* NetworkTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A130E72457A1CA007F141B /* NetworkTesting.swift */; };
 		33DC91A82435419700EDCC7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A72435419700EDCC7C /* AppDelegate.swift */; };
 		33DC91AA2435419700EDCC7C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91A92435419700EDCC7C /* SceneDelegate.swift */; };
 		33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91AB2435419700EDCC7C /* BossVC.swift */; };
@@ -57,6 +60,16 @@
 		33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DC91C82435571800EDCC7C /* Day2VC.swift */; };
 		33E987BF24511BA1006E3666 /* GenericsPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E987BE24511BA1006E3666 /* GenericsPlayground.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		33A130E2245794C2007F141B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33DC919C2435419600EDCC7C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33DC91A32435419600EDCC7C;
+			remoteInfo = MOB1.3ClassWork;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		335233F72453E8210056EA8E /* Embed Frameworks */ = {
@@ -107,6 +120,11 @@
 		339BDD782447D7500028EEBA /* PokemonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonVC.swift; sourceTree = "<group>"; };
 		339BDD7A2447D8BD0028EEBA /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		339BDD7C244839DF0028EEBA /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		33A130CF24579049007F141B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		33A130DD245794C2007F141B /* MOB1.3ClassWorkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOB1.3ClassWorkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33A130DF245794C2007F141B /* MOB1_3ClassWorkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOB1_3ClassWorkTests.swift; sourceTree = "<group>"; };
+		33A130E1245794C2007F141B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33A130E72457A1CA007F141B /* NetworkTesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTesting.swift; sourceTree = "<group>"; };
 		33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOB1.3ClassWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DC91A72435419700EDCC7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33DC91A92435419700EDCC7C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,11 +143,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		33A130DA245794C2007F141B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33DC91A12435419600EDCC7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				335233FA2453E9640056EA8E /* Kingfisher in Frameworks */,
+				33A130D424579268007F141B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,10 +306,29 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		33A130CE24579019007F141B /* Day9- UnitTesting */ = {
+			isa = PBXGroup;
+			children = (
+				33A130CF24579049007F141B /* Car.swift */,
+				33A130E72457A1CA007F141B /* NetworkTesting.swift */,
+			);
+			path = "Day9- UnitTesting";
+			sourceTree = "<group>";
+		};
+		33A130DE245794C2007F141B /* MOB1.3ClassWorkTests */ = {
+			isa = PBXGroup;
+			children = (
+				33A130DF245794C2007F141B /* MOB1_3ClassWorkTests.swift */,
+				33A130E1245794C2007F141B /* Info.plist */,
+			);
+			path = MOB1.3ClassWorkTests;
+			sourceTree = "<group>";
+		};
 		33DC919B2435419600EDCC7C = {
 			isa = PBXGroup;
 			children = (
 				33DC91A62435419600EDCC7C /* MOB1.3ClassWork */,
+				33A130DE245794C2007F141B /* MOB1.3ClassWorkTests */,
 				33DC91A52435419600EDCC7C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -293,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */,
+				33A130DD245794C2007F141B /* MOB1.3ClassWorkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,6 +358,7 @@
 				330CBF65243A52A800F9B464 /* Day6- URLSession */,
 				330CBF66243A52B300F9B464 /* Day7- Request with Authentication */,
 				33E987BD2450F6D0006E3666 /* Day8- Generics */,
+				33A130CE24579019007F141B /* Day9- UnitTesting */,
 				33DC91B22435419A00EDCC7C /* LaunchScreen.storyboard */,
 				33DC91B02435419A00EDCC7C /* Assets.xcassets */,
 				33DC91B52435419A00EDCC7C /* Info.plist */,
@@ -379,6 +425,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		33A130DC245794C2007F141B /* MOB1.3ClassWorkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33A130E4245794C2007F141B /* Build configuration list for PBXNativeTarget "MOB1.3ClassWorkTests" */;
+			buildPhases = (
+				33A130D9245794C2007F141B /* Sources */,
+				33A130DA245794C2007F141B /* Frameworks */,
+				33A130DB245794C2007F141B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				33A130E3245794C2007F141B /* PBXTargetDependency */,
+			);
+			name = MOB1.3ClassWorkTests;
+			productName = MOB1.3ClassWorkTests;
+			productReference = 33A130DD245794C2007F141B /* MOB1.3ClassWorkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		33DC91A32435419600EDCC7C /* MOB1.3ClassWork */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33DC91B82435419A00EDCC7C /* Build configuration list for PBXNativeTarget "MOB1.3ClassWork" */;
@@ -394,7 +458,7 @@
 			);
 			name = MOB1.3ClassWork;
 			packageProductDependencies = (
-				335233F92453E9640056EA8E /* Kingfisher */,
+				33A130D324579268007F141B /* Kingfisher */,
 			);
 			productName = MOB1.3ClassWork;
 			productReference = 33DC91A42435419600EDCC7C /* MOB1.3ClassWork.app */;
@@ -410,6 +474,10 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = SamuelFolledo;
 				TargetAttributes = {
+					33A130DC245794C2007F141B = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 33DC91A32435419600EDCC7C;
+					};
 					33DC91A32435419600EDCC7C = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -425,18 +493,26 @@
 			);
 			mainGroup = 33DC919B2435419600EDCC7C;
 			packageReferences = (
-				335233F82453E9640056EA8E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				33A130D224579268007F141B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 33DC91A52435419600EDCC7C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				33DC91A32435419600EDCC7C /* MOB1.3ClassWork */,
+				33A130DC245794C2007F141B /* MOB1.3ClassWorkTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		33A130DB245794C2007F141B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33DC91A22435419600EDCC7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,12 +534,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		33A130D9245794C2007F141B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33A130E0245794C2007F141B /* MOB1_3ClassWorkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		33DC91A02435419600EDCC7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3333D634244E6630003A3CD2 /* NetworkLayer.swift in Sources */,
 				33DC91C92435571800EDCC7C /* Day2SecondVC.swift in Sources */,
+				33A130E82457A1CA007F141B /* NetworkTesting.swift in Sources */,
 				335E27E5243EA1FA003C8BE3 /* Starship.swift in Sources */,
 				330CBF7F243BF7B200F9B464 /* PomodoroFirstVC.swift in Sources */,
 				339BDD7D244839DF0028EEBA /* String+extensions.swift in Sources */,
@@ -478,6 +563,7 @@
 				3333D632244E6618003A3CD2 /* Photo.swift in Sources */,
 				33DC91CA2435571800EDCC7C /* Day2VC.swift in Sources */,
 				330CBF81243BF7BE00F9B464 /* PomodoroVC.swift in Sources */,
+				33A130D1245790A3007F141B /* Car.swift in Sources */,
 				335E27E6243EA1FD003C8BE3 /* CrewMember.swift in Sources */,
 				33106EF8244518DD00BFCBFD /* Day5-JsonValidator.swift in Sources */,
 				33DC91AC2435419700EDCC7C /* BossVC.swift in Sources */,
@@ -504,6 +590,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		33A130E3245794C2007F141B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 33DC91A32435419600EDCC7C /* MOB1.3ClassWork */;
+			targetProxy = 33A130E2245794C2007F141B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		33DC91AD2435419700EDCC7C /* Day2.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -524,6 +618,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		33A130E5245794C2007F141B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9NY68F4K3P;
+				INFOPLIST_FILE = MOB1.3ClassWorkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SamuelFolledo.MOB1-3ClassWorkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MOB1.3ClassWork.app/MOB1.3ClassWork";
+			};
+			name = Debug;
+		};
+		33A130E6245794C2007F141B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9NY68F4K3P;
+				INFOPLIST_FILE = MOB1.3ClassWorkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "SamuelFolledo.MOB1-3ClassWorkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MOB1.3ClassWork.app/MOB1.3ClassWork";
+			};
+			name = Release;
+		};
 		33DC91B62435419A00EDCC7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -677,6 +811,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		33A130E4245794C2007F141B /* Build configuration list for PBXNativeTarget "MOB1.3ClassWorkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33A130E5245794C2007F141B /* Debug */,
+				33A130E6245794C2007F141B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		33DC919F2435419600EDCC7C /* Build configuration list for PBXProject "MOB1.3ClassWork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -698,7 +841,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		335233F82453E9640056EA8E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		33A130D224579268007F141B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -709,9 +852,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		335233F92453E9640056EA8E /* Kingfisher */ = {
+		33A130D324579268007F141B /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 335233F82453E9640056EA8E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 33A130D224579268007F141B /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
