@@ -8,10 +8,11 @@
 
 import Foundation
 
-struct Movie {
+struct Movie: ModelProtocol {
     let id: Int
     let title: String
     let posterPath: String
     let releaseDate: String
 }
 
+extension Movie: Hashable {}
