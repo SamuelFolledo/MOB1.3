@@ -39,20 +39,20 @@ class ViewController: UIViewController {
     }
     
     func fetchPopular(){
-        let api = MovieDB.api
-        api.send(request: .popularMovies(completion: { result in
-            switch result {
-            case .success(let page):
-              print("Result=",page.results)
-              self.movies = page.results
-              var basicSection = MovieSection()
-              basicSection.numberOfItems = self.movies.count
-              basicSection.items = page.results
-              self.sections = [TitleSection(title: "Now Trending"), basicSection]
-              self.setupCollectionView()
-            case .failure(let error):  print(error)
-            }
-        }))
+    let api = MovieDB.api
+    api.send(request: .popularMovies(completion: { result in
+        switch result {
+        case .success(let page):
+          print(page.results)
+          self.movies = page.results
+          var basicSection = MovieSection()
+          basicSection.numberOfItems = self.movies.count
+          basicSection.items = page.results
+          self.sections = [TitleSection(title: "Now Trending"), basicSection]
+          self.setupCollectionView()
+        case .failure(let error):  print(error)
+        }
+    }))
     }
 }
 

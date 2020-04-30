@@ -2,7 +2,7 @@
 //  APIClient.swift
 //  Moviefy
 //
-//  Created by Macbook Pro 15 on 4/29/20.
+//  Created by Adriana González Martínez on 4/28/20.
 //  Copyright © 2020 Adriana González Martínez. All rights reserved.
 //
 
