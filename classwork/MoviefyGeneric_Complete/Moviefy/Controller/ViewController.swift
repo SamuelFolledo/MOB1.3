@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     private var movies: [Movie] = []
+    private var upcomingMovies: [Movie] = []
     var collectionView: UICollectionView!
     var sections: [Section] = []
     
@@ -39,20 +40,34 @@ class ViewController: UIViewController {
     }
     
     func fetchPopular(){
-    let api = MovieDB.api
-    api.send(request: .popularMovies(completion: { result in
-        switch result {
-        case .success(let page):
-          print(page.results)
-          self.movies = page.results
-          var basicSection = MovieSection()
-          basicSection.numberOfItems = self.movies.count
-          basicSection.items = page.results
-          self.sections = [TitleSection(title: "Now Trending"), basicSection]
-          self.setupCollectionView()
-        case .failure(let error):  print(error)
-        }
-    }))
+        let api = MovieDB.api
+        api.send(request: .popularMovies(completion: { result in
+            switch result {
+            case .success(let page):
+//                print(page.results)
+                self.movies = page.results
+                var basicSection = MovieSection()
+                basicSection.numberOfItems = self.movies.count
+                basicSection.items = page.results
+                self.sections = [TitleSection(title: "Now Trending"), basicSection]
+                self.setupCollectionView()
+            case .failure(let error):  print(error)
+            }
+        }))
+        
+//        api.send(request: .upcomingMovies(completion: { result in
+//            switch result {
+//            case .success(let page):
+//                print("Upcoming", page.results)
+//                self.upcomingMovies = page.results
+//                var upcomingSection = MovieSection()
+//                upcomingSection.numberOfItems = self.movies.count
+//                upcomingSection.items = page.results
+//                self.sections = [TitleSection(title: "Upcoming"), upcomingSection]
+//                self.setupCollectionView()
+//            case .failure(let error):  print(error)
+//            }
+//        }))
     }
 }
 

@@ -31,6 +31,14 @@ extension Request {
             result.decoding(PagedResults<Movie>.self, completion: completion)
         }
     }
+    
+//    static func upcomingMovies(completion: @escaping (Result<PagedResults<Movie>, Error>) -> Void) -> Request {
+//        Request.basic(baseURL: MovieDB.baseURL, path: "upcoming/movie", params: [
+//            URLQueryItem(name: "sort_by", value: "popularity.desc")
+//        ]) { result in
+//            result.decoding(PagedResults<Movie>.self, completion: completion)
+//        }
+//    }
 }
 
 public extension Result where Success == Data, Failure == Error {
