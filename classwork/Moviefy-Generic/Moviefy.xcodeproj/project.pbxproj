@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33CDA62E245BC00C00F5894E /* MovieDBConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CDA62D245BC00C00F5894E /* MovieDBConfiguration.swift */; };
+		33CDA630245BC38000F5894E /* ConfigurationResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CDA62F245BC38000F5894E /* ConfigurationResults.swift */; };
 		33EE826F245A33D700C8844D /* PrivateKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE826E245A33D700C8844D /* PrivateKeys.swift */; };
 		33EE8272245A347C00C8844D /* MovieDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE8271245A347C00C8844D /* MovieDB.swift */; };
 		33EE8274245A348F00C8844D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EE8273245A348F00C8844D /* APIClient.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33CDA62D245BC00C00F5894E /* MovieDBConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBConfiguration.swift; sourceTree = "<group>"; };
+		33CDA62F245BC38000F5894E /* ConfigurationResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationResults.swift; sourceTree = "<group>"; };
 		33EE826E245A33D700C8844D /* PrivateKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeys.swift; sourceTree = "<group>"; };
 		33EE8271245A347C00C8844D /* MovieDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDB.swift; sourceTree = "<group>"; };
 		33EE8273245A348F00C8844D /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -124,9 +128,11 @@
 		AB9F580E243D680D006612A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AB9F580F243D6820006612A3 /* Movie.swift */,
 				33EE8275245A34D500C8844D /* ModelProtocol.swift */,
+				AB9F580F243D6820006612A3 /* Movie.swift */,
+				33CDA62D245BC00C00F5894E /* MovieDBConfiguration.swift */,
 				33EE8277245A362600C8844D /* PagedResults.swift */,
+				33CDA62F245BC38000F5894E /* ConfigurationResults.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				AB9F5800243D62FF006612A3 /* TitleSection.swift in Sources */,
 				AB9F5803243D6327006612A3 /* TitleCell.swift in Sources */,
 				33EE826F245A33D700C8844D /* PrivateKeys.swift in Sources */,
+				33CDA62E245BC00C00F5894E /* MovieDBConfiguration.swift in Sources */,
 				33EE8276245A34D500C8844D /* ModelProtocol.swift in Sources */,
 				ABAB4F0C241A172E001E85CA /* ViewController.swift in Sources */,
 				ABAB4F08241A172E001E85CA /* AppDelegate.swift in Sources */,
@@ -257,6 +264,7 @@
 				33EE827A245A369200C8844D /* RequestBuilder.swift in Sources */,
 				AB9F5810243D6820006612A3 /* Movie.swift in Sources */,
 				AB9F57FA243D54F1006612A3 /* MovieCell.swift in Sources */,
+				33CDA630245BC38000F5894E /* ConfigurationResults.swift in Sources */,
 				ABAB4F0A241A172E001E85CA /* SceneDelegate.swift in Sources */,
 				33EE8278245A362600C8844D /* PagedResults.swift in Sources */,
 				33EE8272245A347C00C8844D /* MovieDB.swift in Sources */,

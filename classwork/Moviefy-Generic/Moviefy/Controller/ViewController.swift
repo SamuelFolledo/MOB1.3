@@ -70,6 +70,14 @@ class ViewController: UIViewController {
             case .failure(let error):  print(error)
             }
         }))
+        
+        api.send(request: .configuration(completion: { (result) in
+            switch result {
+            case .success(let configuration):
+                print("Configuration Results = \(configuration)")
+            case .failure(let error): print("Configuration Error \(error)")
+            }
+        }))
     }
 }
 

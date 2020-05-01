@@ -29,7 +29,6 @@ extension Request {
         Request.basic(baseURL: MovieDB.baseURL, path: "discover/movie", params: [
             URLQueryItem(name: "sort_by", value: "popularity.desc")
         ]) { result in
-//            print("Popular Movies=\(result)")
           //we need to take the result and decode the response JSON into our expected type
             result.decoding(PagedResults<Movie>.self, completion: completion) //This now reads as: take the result, decode into this type (PagedResults), then call this completion block.
         }
@@ -42,6 +41,12 @@ extension Request {
             result.decoding(PagedResults<Movie>.self, completion: completion)
         }
     }
+    
+    static func configuration(completion: @escaping (Result<ConfigurationResults<MovieDBConfiguration.Images>, Error>) -> Void) -> Request {
+            Request.basic(baseURL: MovieDB.baseURL, path: "configuration") { result in
+                result.decoding(ConfigurationResults<MovieDBConfiguration.Images>.self, completion: completion)
+            }
+        }
 }
 
 public extension Result where Success == Data, Failure == Error {

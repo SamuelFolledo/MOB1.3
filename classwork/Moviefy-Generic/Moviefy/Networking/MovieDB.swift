@@ -19,4 +19,12 @@ struct MovieDB { // logic specific to the TMDB API
         ]
         return APIClient(configuration: configuration)
     }()
+//    public static var configApi: APIClient = {
+//        let configuration = URLSessionConfiguration.default
+//        let apiKey = PrivateKey.movieKey.rawValue
+//        configuration.httpAdditionalHeaders = [
+//            "Authorization": "Bearer \(apiKey)"
+//        ]
+//        return APIClient(configuration: configuration)
+//    }()
 }
