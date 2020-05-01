@@ -42,14 +42,12 @@ public extension Result where Success == Data, Failure == Error {
             //Result’s flatMap() method takes the successful case (if it was successful) and applies your block. You can return a new Result that contains a successful value or an error.
             let result = self.flatMap { data -> Result<M, Error> in
                 do {
-                    
-                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
-                        print(data, "JSON RESULT=", jsonResult)
-
                     let decoder = M.decoder
                     let model = try decoder.decode(M.self, from: data)
                     return .success(model)
                 } catch {
+//                    let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
+//                    print(data, "JSON ERROR RESULT=", jsonResult)
                     return .failure(error)
                 }
             }

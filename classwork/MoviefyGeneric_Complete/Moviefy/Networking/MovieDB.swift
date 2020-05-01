@@ -13,7 +13,7 @@ struct MovieDB { // logic specific to the TMDB API
     public static let baseURL = URL(string: "https://api.themoviedb.org/3/")!
     public static var api: APIClient = {
         let configuration = URLSessionConfiguration.default
-        let apiKey = "467faceb327ee4f3be17cebdfabd0744"
+        let apiKey = PrivateKey.readMovieKey
         configuration.httpAdditionalHeaders = [
             "Authorization": "Bearer \(apiKey)"
         ]
