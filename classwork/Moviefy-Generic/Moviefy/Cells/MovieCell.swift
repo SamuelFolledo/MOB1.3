@@ -25,10 +25,9 @@ class MovieCell: UICollectionViewCell {
         topLabel.text = movie.title
         bottomLabel.text = movie.releaseDate
         //images
-        let imageURL : URL?
+        guard let imageUrl = movie.posterPath else { return }
         let imageBase = MovieDB.baseImageURL
-        imageURL = imageBase.appendingPathComponent(movie.posterPath)
-        coverImg.kf.setImage(with: imageURL)
+        coverImg.kf.setImage(with: imageBase.appendingPathComponent(imageUrl))
     }
     
     override func prepareForReuse() {

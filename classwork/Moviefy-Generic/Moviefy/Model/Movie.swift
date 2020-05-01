@@ -11,7 +11,7 @@ import Foundation
 struct Movie: ModelProtocol {
     let id: Int
     let title: String
-    let posterPath: String
+    let posterPath: String? //must be optional
     let releaseDate: String
 }
 

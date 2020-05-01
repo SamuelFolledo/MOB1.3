@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     private var movies: [Movie] = []
+    private var upcomingMovies: [Movie] = []
     var collectionView: UICollectionView!
     var sections: [Section] = []
     
@@ -38,18 +39,34 @@ class ViewController: UIViewController {
         self.view.addSubview(collectionView)
     }
     
-    func fetchPopular(){
+    func fetchPopular() {
         let api = MovieDB.api
         api.send(request: .popularMovies(completion: { result in
             switch result {
             case .success(let page):
-              print("Result=",page.results)
-              self.movies = page.results
-              var basicSection = MovieSection()
-              basicSection.numberOfItems = self.movies.count
-              basicSection.items = page.results
-              self.sections = [TitleSection(title: "Now Trending"), basicSection]
-              self.setupCollectionView()
+//                print(page.results)
+                self.movies = page.results
+                var basicSection = MovieSection()
+                basicSection.numberOfItems = self.movies.count
+                basicSection.items = page.results
+                self.sections.append(TitleSection(title: "Now Trending"))
+                self.sections.append(basicSection)
+                self.setupCollectionView()
+            case .failure(let error):  print(error)
+            }
+        }))
+        
+        api.send(request: .upcomingMovies(completion: { result in
+            switch result {
+            case .success(let page):
+//                print("Upcoming", page.results)
+                self.upcomingMovies = page.results
+                var upcomingSection = MovieSection()
+                upcomingSection.numberOfItems = self.upcomingMovies.count
+                upcomingSection.items = page.results
+                self.sections.append(TitleSection(title: "Upcoming"))
+                self.sections.append(upcomingSection)
+                self.setupCollectionView()
             case .failure(let error):  print(error)
             }
         }))

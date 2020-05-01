@@ -17,11 +17,11 @@ public protocol ModelProtocol: Codable {
 public extension ModelProtocol {
     static var decoder: JSONDecoder {
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.keyDecodingStrategy = .convertFromSnakeCase //must convert snake case to Swift's camel case
         return decoder
     }
 
-    static var encoder: JSONEncoder {
+    static var encoder: JSONEncoder { //convert camelcase to snake case
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase
         return encoder

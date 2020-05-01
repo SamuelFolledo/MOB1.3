@@ -13,7 +13,10 @@ struct PagedResults<T: ModelProtocol>: ModelProtocol {
     let page: Int
     let totalPages: Int
     let results: [T]
+//    let dates: String //response for upcoming
 }
+
+
 
 extension PagedResults {
     static var decoder: JSONDecoder { T.decoder }
