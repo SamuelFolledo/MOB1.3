@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VIz-ZH-1QQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VIz-ZH-1QQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,14 +26,49 @@
         <!--Profile-->
         <scene sceneID="Uhe-l8-oEh">
             <objects>
-                <viewController title="Profile" id="8HR-D1-k4r" sceneMemberID="viewController">
+                <viewController title="Profile" id="8HR-D1-k4r" customClass="LoginVC" customModule="Moviefy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Swh-ze-r4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="POD-Bx-5vT">
+                                <rect key="frame" x="100" y="408" width="214" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in as:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKh-e3-d8m">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEa-nZ-cWc">
+                                        <rect key="frame" x="0.0" y="30.5" width="214" height="49.5"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="8HR-D1-k4r" eventType="touchUpInside" id="iw6-yy-dfV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VKh-e3-d8m" firstAttribute="width" secondItem="POD-Bx-5vT" secondAttribute="width" id="0AU-3b-Xgz"/>
+                                    <constraint firstAttribute="height" constant="80" id="77C-j0-Kaq"/>
+                                    <constraint firstItem="cEa-nZ-cWc" firstAttribute="width" secondItem="POD-Bx-5vT" secondAttribute="width" id="wW8-6j-cNA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="POD-Bx-5vT" firstAttribute="leading" secondItem="PfG-4T-bHw" secondAttribute="leading" constant="100" id="VOA-A1-Cnx"/>
+                            <constraint firstItem="POD-Bx-5vT" firstAttribute="centerX" secondItem="Swh-ze-r4t" secondAttribute="centerX" id="YqX-A7-oUY"/>
+                            <constraint firstItem="PfG-4T-bHw" firstAttribute="trailing" secondItem="POD-Bx-5vT" secondAttribute="trailing" constant="100" id="maK-I5-lIw"/>
+                            <constraint firstItem="POD-Bx-5vT" firstAttribute="centerY" secondItem="Swh-ze-r4t" secondAttribute="centerY" id="sdr-3u-r4d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PfG-4T-bHw"/>
                     </view>
                     <navigationItem key="navigationItem" id="7o4-ei-mIu"/>
+                    <connections>
+                        <outlet property="loginButton" destination="cEa-nZ-cWc" id="Pje-t2-M41"/>
+                        <outlet property="loginLabel" destination="VKh-e3-d8m" id="V1i-bq-dij"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwj-Bi-ZMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +133,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="person" catalog="system" width="64" height="60"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
     </resources>
 </document>

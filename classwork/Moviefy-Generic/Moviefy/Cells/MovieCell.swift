@@ -31,7 +31,7 @@ class MovieCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
-        //coverImg.kf.cancelDownloadTask()
+        coverImg.kf.cancelDownloadTask()
         coverImg.image = nil
         topLabel.text = nil
         bottomLabel.text = nil
