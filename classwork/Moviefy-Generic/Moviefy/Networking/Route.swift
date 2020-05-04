@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+public enum Route: String{
+    case discoverMovie =  "discover/movie"
+    case upcomingMovie = "movie/upcoming"
+    case token = "authentication/token/new"
+    case session = "authentication/session/new"
+    case account = "account"
+}
