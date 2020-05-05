@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct AuthenticationTokenResponse: Codable {
-    let success: Bool
-    let expires_at: String
-    let request_token: String
+struct AuthenticationTokenResponse: ModelProtocol {
+    let success: Bool?
+    let expires_at: String?
+    let request_token: String?
 }
 
-struct CreateSessionResponse: Codable {
+struct CreateSessionResponse: ModelProtocol {
     let success: Bool
     let session_id: String
 }
 
-struct Account : Codable {
+struct Account : ModelProtocol {
     let id: Int
     let name: String?
     let username: String?
