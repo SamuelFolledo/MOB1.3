@@ -21,6 +21,35 @@ class LoginVC: UIViewController {
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        
+        let api = MovieDB.api
+        api.send(request: .getToken(completion: { (result) in
+            switch result {
+            case .success(let user):
+                print("USER", user)
+                //                print(page.results)
+//                self.movies = page.results
+//                var basicSection = MovieSection()
+//                basicSection.numberOfItems = self.movies.count
+//                basicSection.items = page.results
+//                self.sections.append(TitleSection(title: "Now Trending"))
+//                self.sections.append(basicSection)
+//                self.setupCollectionView()
+            case .failure(let error):  print(error)
+            }
+        }))
+//        api.send(request: .popularMovies(completion: { result in
+//            switch result {
+//            case .success(let page):
+//                //                print(page.results)
+//                self.movies = page.results
+//                var basicSection = MovieSection()
+//                basicSection.numberOfItems = self.movies.count
+//                basicSection.items = page.results
+//                self.sections.append(TitleSection(title: "Now Trending"))
+//                self.sections.append(basicSection)
+//                self.setupCollectionView()
+//            case .failure(let error):  print(error)
+//            }
+//        }))
     }
 }

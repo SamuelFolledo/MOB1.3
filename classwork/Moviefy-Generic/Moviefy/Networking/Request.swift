@@ -25,9 +25,10 @@ public struct Request {
 }
 
 extension Request {
-    static func login() {
-        Request.basic(method: .post, baseURL: MovieDB.baseURL, path: Route.token.rawValue, params: []) { result in
-            result.decoding(<#T##model: ModelProtocol.Protocol##ModelProtocol.Protocol#>, completion: <#T##(Result<ModelProtocol, Error>) -> Void#>)
+    //get the token for authentication
+    static func getToken(completion: @escaping (Result<AuthenticationTokenResponse, Error>) -> Void) -> Request {
+        Request.basic(method: .get, baseURL: MovieDB.baseURL, path: Route.token.rawValue, params: []) { result in
+            result.decoding(AuthenticationTokenResponse.self, completion: completion)
         }
     }
     

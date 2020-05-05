@@ -9,10 +9,10 @@
 import Foundation
 
 //Here we are using a generic type PagedResults that has a generic parameter T. T is constrained to be an implementation of ModelProtocol, so we know it is decodable already.
-struct PagedResults<T: ModelProtocol>: ModelProtocol {
+struct PagedResults<T: ModelProtocol>: ModelProtocol { //first layer
     let page: Int
     let totalPages: Int
-    let results: [T]
+    let results: [T] //result is an array of Movie which conforms to ModelProtocol
 //    let dates: String //response for upcoming
 }
 
