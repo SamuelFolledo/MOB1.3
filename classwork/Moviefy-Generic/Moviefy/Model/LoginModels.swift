@@ -9,7 +9,7 @@
 import Foundation
 
 struct AuthenticationTokenResponse: ModelProtocol {
-    let success: Bool?
+    let success: Bool
     let expires_at: String?
     let request_token: String?
 }

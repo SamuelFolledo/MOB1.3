@@ -28,7 +28,7 @@ extension Request {
     //get the token for authentication
     static func getToken(completion: @escaping (Result<AuthenticationTokenResponse, Error>) -> Void) -> Request {
         Request.basic(method: .get, baseURL: MovieDB.baseURL, path: Route.token.rawValue, params: []) { result in
-            result.decoding(AuthenticationTokenResponse.self, completion: completion)
+            result.decoding(AuthenticationTokenResponse.self, completion: completion) //result's success will either be true or false
         }
     }
     
@@ -50,10 +50,10 @@ extension Request {
     }
     
     static func configuration(completion: @escaping (Result<ConfigurationResults<MovieDBConfiguration.Images>, Error>) -> Void) -> Request {
-            Request.basic(baseURL: MovieDB.baseURL, path: "configuration") { result in
-                result.decoding(ConfigurationResults<MovieDBConfiguration.Images>.self, completion: completion)
-            }
+        Request.basic(baseURL: MovieDB.baseURL, path: "configuration") { result in
+            result.decoding(ConfigurationResults<MovieDBConfiguration.Images>.self, completion: completion)
         }
+    }
 }
 
 public extension Result where Success == Data, Failure == Error {

@@ -24,8 +24,11 @@ class LoginVC: UIViewController {
         let api = MovieDB.api
         api.send(request: .getToken(completion: { (result) in
             switch result {
-            case .success(let user):
-                print("USER", user)
+            case .success(let result):
+                print("GETOKEN result=", result)
+                if result.success {
+                    //begin authentication
+                }
                 //                print(page.results)
 //                self.movies = page.results
 //                var basicSection = MovieSection()
