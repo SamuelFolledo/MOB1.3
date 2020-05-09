@@ -16,16 +16,15 @@ struct ImageSection: Section {
     
     init(categories: [Category]) {
         self.categories = categories
+        numberOfItems = categories.count
     }
     
     func layoutSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.54))
-        
+//        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.54))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(300)) //absolute height
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         return section
@@ -34,17 +33,8 @@ struct ImageSection: Section {
     func configureCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell{
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCell.self), for: indexPath) as! ImageCell
         let category = self.categories[indexPath.row]
-        print("Category=\(category)")
-//        cell.setContents(movie: items[indexPath.row])
+        cell.setContents(title: category.rawValue)
         return cell
     }
-    
-    func configureCell(title: String, image: UIImage = UIImage(), collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell { //another configureCell method
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ImageCell.self), for: indexPath) as! ImageCell
-        
-        cell.setContents(title: title, image: image)
-        return cell
-    }
-    
 }
 
