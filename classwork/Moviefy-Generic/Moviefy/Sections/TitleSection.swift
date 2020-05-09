@@ -1,9 +1,9 @@
 //
 //  TitleSection.swift
-//  Moviefy
+//  NewsApp
 //
-//  Created by Adriana González Martínez on 4/7/20.
-//  Copyright © 2020 Adriana González Martínez. All rights reserved.
+//  Created by Samuel Folledo on 4/7/20.
+//  Copyright © 2020 Samuel Folledo. All rights reserved.
 //
 
 import UIKit
