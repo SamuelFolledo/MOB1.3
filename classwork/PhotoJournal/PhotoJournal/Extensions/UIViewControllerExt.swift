@@ -10,15 +10,15 @@ import UIKit
 import Foundation
 
 var vSpinner: UIView?
+
 extension UIViewController {
+    
     static func instantiate() -> Self {
-        
         return self.init(nibName: String(describing: self), bundle:nil)
     }
     
     @objc func keyboardWillShow(notifaction: NSNotification) {
         if let keyboardSize = (notifaction.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            
             if self.view.frame.origin.y == 0 {
                 self.view.frame.origin.y -= keyboardSize.height - 50
             }
@@ -44,12 +44,10 @@ extension UIViewController {
         let ai = UIActivityIndicatorView.init(style: .large)
         ai.startAnimating()
         ai.center = spinnerView.center
-        
         DispatchQueue.main.async {
             spinnerView.addSubview(ai)
             onView.addSubview(spinnerView)
         }
-        
         vSpinner = spinnerView
     }
     
