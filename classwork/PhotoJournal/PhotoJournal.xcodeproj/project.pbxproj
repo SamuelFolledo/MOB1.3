@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33A80BE4247F193C00756880 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A80BE3247F193C00756880 /* GoogleService-Info.plist */; };
 		544B886CDAE022591D1558C5 /* Pods_PhotoJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD046B90325C708A794022 /* Pods_PhotoJournal.framework */; };
 		57C99441BE82D86A008C6384 /* Pods_PhotoJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE39888A0229FA8E166F84B1 /* Pods_PhotoJournalTests.framework */; };
 		61A75C122454FD5000D750B7 /* MediaSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A75C112454FD5000D750B7 /* MediaSelectorView.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		03AD046B90325C708A794022 /* Pods_PhotoJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33A80BE3247F193C00756880 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4CB0D6DC6408D7FAB56E1A2F /* Pods-PhotoJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoJournalTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoJournalTests/Pods-PhotoJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61A75C112454FD5000D750B7 /* MediaSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSelectorView.swift; sourceTree = "<group>"; };
 		61A75C1324566DDC00D750B7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				61B8075E24509394004EAF61 /* Assets.xcassets */,
 				61B8076024509394004EAF61 /* LaunchScreen.storyboard */,
 				61B8076324509394004EAF61 /* Info.plist */,
+				33A80BE3247F193C00756880 /* GoogleService-Info.plist */,
 			);
 			path = PhotoJournal;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				61B8076224509394004EAF61 /* LaunchScreen.storyboard in Resources */,
 				61B8075F24509394004EAF61 /* Assets.xcassets in Resources */,
+				33A80BE4247F193C00756880 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +523,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hazewritescode.projects.PhotoJournal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SamuelFolledo.PhotoJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -538,7 +542,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hazewritescode.projects.PhotoJournal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SamuelFolledo.PhotoJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
