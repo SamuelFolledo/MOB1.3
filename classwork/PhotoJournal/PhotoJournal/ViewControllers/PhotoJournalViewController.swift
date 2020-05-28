@@ -27,6 +27,9 @@ class PhotoJournalViewController: UIViewController {
     let screen = UIScreen.main
     var leadingAnchor: NSLayoutConstraint? = nil
     var topAnchor: NSLayoutConstraint? = nil
+    let db = Firestore.firestore()
+    let storage = Storage.storage()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -54,13 +57,11 @@ class PhotoJournalViewController: UIViewController {
             journalView.widthAnchor.constraint(equalToConstant: screen.bounds.width),
             journalView.heightAnchor.constraint(equalToConstant: screen.bounds.height),
             
-            
             mediaSelectorview.topAnchor.constraint(equalTo: self.photoCollectionView.bottomAnchor),
             mediaSelectorview.leadingAnchor.constraint(equalTo: self.photoCollectionView.leadingAnchor),
             mediaSelectorview.widthAnchor.constraint(equalToConstant: screen.bounds.width),
             mediaSelectorview.heightAnchor.constraint(equalToConstant: screen.bounds.height)
         ])
-        
         
         let logoutBarButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
         
@@ -69,15 +70,66 @@ class PhotoJournalViewController: UIViewController {
         let addEntryBarButton = UIBarButtonItem(title: "＋", style: .plain, target: self, action: #selector(gotoMediaSelector))
         
         self.navigationItem.rightBarButtonItems = [addEntryBarButton]
-        
     }
+    
     // function that takes us to the Media Selector screen
     @objc func gotoMediaSelector(){
         self.animateViewFrame(animation: .PhotoListToMediaSelector)
     }
+    
     // function to add an entry to our firebase
-    @objc func addEntry(){
+    @objc func addEntry() {
+        showSpinner(onView: self.view)
         self.animateViewFrame(animation: .PhotoListToMediaSelector)
+        if let userId = UserDefaults.standard.string(forKey: "UserId") {
+            var ref: DocumentReference? = nil
+            let textToSave = self.journalView.journalEntryTextView.text!
+            let storageRef = storage.reference()
+            let imageData = journalView.photoView.image?.pngData()
+            let imageRef = storageRef.child("images/\(NSUUID().uuidString)") //image ref in storage
+            let uploadTask = imageRef.putData(imageData!, metadata: nil) { (metaData, error) in //upload image in that ref
+                if let error = error {
+                    self.presentAlert(title: "Adding Entry Error", message: error.localizedDescription)
+                    self.removeSpinner()
+                    return
+                }
+            }
+            uploadTask.observe(.success) { (snapshot) in
+                imageRef.downloadURL { (url, error) in
+                    if let error = error {
+                        self.presentAlert(title: "Downloading Entry Error", message: error.localizedDescription)
+                        self.removeSpinner()
+                        return
+                    }
+                    guard let imageUrl = url else {
+                        self.presentAlert(title: "Downloading Image URL Error")
+                        self.removeSpinner()
+                        return
+                    }
+                    let currentDate = Date()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "M/d/yyyy, HH:mm a"
+                    dateFormatter.timeZone = NSTimeZone() as TimeZone //get user's timezone
+                    let localDate = dateFormatter.string(from: currentDate)
+                    
+                    ref = self.db.collection("\(userId)").addDocument(data: [ //39m collection is a space in database
+                        "imagePath": "\(imageUrl)",
+                        "textEntry": "\(textToSave)",
+                        "timeStamp": "\(localDate)"
+                        ], completion: { (error) in
+                            if let error = error {
+                                self.presentAlert(title: "Error Saving Document", message: error.localizedDescription)
+                                self.removeSpinner()
+                                return
+                            }
+                            print("Successfully added document with ID \(ref!.documentID)")
+                            self.removeSpinner()
+                            self.animateViewFrame(animation: .JournalToPhotoList)
+                    })
+                    self.dismissKeyboard()
+                }
+            }
+        }
     }
     
     // function to log out
@@ -115,17 +167,12 @@ class PhotoJournalViewController: UIViewController {
                 self.leadingAnchor = self.photoCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -1 * self.screen.bounds.width)
                 self.leadingAnchor?.isActive = true
                 self.view.layoutIfNeeded()
-                
                 let cancelBarButton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(self.cancel))
-                
                 let saveBarButton = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(self.addEntry))
-                
                 self.navigationItem.rightBarButtonItems = [saveBarButton]
                 self.navigationItem.leftBarButtonItems = [cancelBarButton]
                 self.hideKeyboardTapped()
             }
-            
-            break
         // if we are going from the journal back to the Collection view ex. we clicked cancel, save or update
         case .JournalToPhotoList:
             UIView.animate(withDuration: 0.25) {
@@ -144,7 +191,6 @@ class PhotoJournalViewController: UIViewController {
                     self.view.removeGestureRecognizer(gesture)
                 }
             }
-            break
         // if we are going to the media selector from the collectionView ex. we clicked the "+" button
         case .PhotoListToMediaSelector:
             UIView.animate(withDuration: 0.25) {
@@ -156,7 +202,6 @@ class PhotoJournalViewController: UIViewController {
                 self.navigationItem.rightBarButtonItems = [addEntryBarButton]
                 self.navigationItem.leftBarButtonItems = []
             }
-            break
         // if we clicked cancel from the Media selector
         case .MediaSelectorToPhotoList:
             UIView.animate(withDuration: 0.25) {
@@ -169,7 +214,6 @@ class PhotoJournalViewController: UIViewController {
                  let logoutBarButton = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(self.logout))
                  self.navigationItem.leftBarButtonItems = [logoutBarButton]
             }
-            break
         // Once we tap what kind of media we want to use then we proceed to the journal view
         case .MediaSelectorToJournal:
             UIView.animate(withDuration: 0.25) {
@@ -187,8 +231,6 @@ class PhotoJournalViewController: UIViewController {
                 self.navigationItem.leftBarButtonItems = [cancelBarButton]
                 self.hideKeyboardTapped()
             }
-            
-            break
         }
     }
     
