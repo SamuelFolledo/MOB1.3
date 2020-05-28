@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33A80BE4247F193C00756880 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33A80BE3247F193C00756880 /* GoogleService-Info.plist */; };
+		33A80C84247F9B2600756880 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A80C83247F9B2600756880 /* Entry.swift */; };
 		544B886CDAE022591D1558C5 /* Pods_PhotoJournal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AD046B90325C708A794022 /* Pods_PhotoJournal.framework */; };
 		57C99441BE82D86A008C6384 /* Pods_PhotoJournalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE39888A0229FA8E166F84B1 /* Pods_PhotoJournalTests.framework */; };
 		61A75C122454FD5000D750B7 /* MediaSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A75C112454FD5000D750B7 /* MediaSelectorView.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		03AD046B90325C708A794022 /* Pods_PhotoJournal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoJournal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A80BE3247F193C00756880 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33A80C83247F9B2600756880 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4CB0D6DC6408D7FAB56E1A2F /* Pods-PhotoJournalTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoJournalTests.debug.xcconfig"; path = "Target Support Files/Pods-PhotoJournalTests/Pods-PhotoJournalTests.debug.xcconfig"; sourceTree = "<group>"; };
 		61A75C112454FD5000D750B7 /* MediaSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaSelectorView.swift; sourceTree = "<group>"; };
 		61A75C1324566DDC00D750B7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				61B8075524509393004EAF61 /* AppDelegate.swift */,
 				61B8075724509393004EAF61 /* SceneDelegate.swift */,
+				33A80C83247F9B2600756880 /* Entry.swift */,
 				61B8078024540730004EAF61 /* Views */,
 				61B8077F245406E6004EAF61 /* ViewControllers */,
 				33DEE23C24735F8A00E96472 /* Extensions */,
@@ -354,6 +357,7 @@
 			files = (
 				61C9D78E245499FC00C1EB9E /* JournalView.swift in Sources */,
 				61B8075A24509393004EAF61 /* LoginSignUpViewController.swift in Sources */,
+				33A80C84247F9B2600756880 /* Entry.swift in Sources */,
 				61A75C122454FD5000D750B7 /* MediaSelectorView.swift in Sources */,
 				61B8077A2452AFF9004EAF61 /* RegisterView.swift in Sources */,
 				61B8077C2453EF27004EAF61 /* UIViewControllerExt.swift in Sources */,

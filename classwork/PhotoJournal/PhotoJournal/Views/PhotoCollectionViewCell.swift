@@ -6,10 +6,17 @@
 //  Copyright © 2020 HazeStudio. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseStorage
 
 class PhotoCollectionViewCell: UICollectionViewCell {
+    var entry: Entry! {
+        didSet {
+            populateCell()
+        }
+    }
+    let storage = Storage.storage()
     static let identifier = "PhotoCollectionViewCell"
     let photoView: UIImageView = {
        let imageView = UIImageView()
@@ -30,6 +37,20 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         setupViews()
     }
     
+    func populateCell() {
+        self.photoCaptionLabel.text = self.entry.timeStamp
+        //get image
+        let imageRef = storage.reference(forURL: entry.imagePath)
+        imageRef.getData(maxSize: Int64.max) { (data, error) in
+            if let error = error {
+                print("Error Getting image: \(error.localizedDescription)")
+                return
+            }
+            let image = UIImage(data: data!)
+            self.photoView.image = image
+        }
+    }
+    
     func setupViews(){
         self.addSubview(photoView)
         self.backgroundColor = UIColor.init(hex: 0x34b1eb)
@@ -40,7 +61,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             photoView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             photoView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
             photoView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
-            
             
             photoCaptionLabel.topAnchor.constraint(equalTo: self.photoView.bottomAnchor, constant: 8),
             photoCaptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),

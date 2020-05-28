@@ -6,11 +6,19 @@
 //  Copyright © 2020 HazeStudio. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class PhotoCollectionView: UIView {
+    
     var delegate: PhotoJournalViewController? = nil
+    let db = Firestore.firestore()
+    var entries: [Entry] = [] {
+        didSet {
+            self.photoCollectionView.reloadData()
+        }
+    }
 
     let photoCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,6 +34,30 @@ class PhotoCollectionView: UIView {
         super.init(frame: frame)
         self.translatesAutoresizingMaskIntoConstraints = false
         setupCollectionView()
+        updateEntries()
+    }
+    
+    func updateEntries() {
+        if let userId = UserDefaults.standard.string(forKey: "UserId") {
+            db.collection("\(userId)").order(by: "timeStamp", descending: true).getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    self.delegate?.presentAlert(title: "Error Fetching Image", message: error.localizedDescription)
+                    return
+                }
+                self.entries = []
+                for doc in querySnapshot!.documents {
+                    let result = Result { try doc.data(as: Entry.self) }
+                    switch result {
+                    case .success(let entry):
+                        if let entry = entry {
+                            self.entries.append(entry)
+                        }
+                    case .failure(let error):
+                        self.delegate?.presentAlert(title: "Error Fetching Image Details", message: error.localizedDescription)
+                    }
+                }
+            } //get latest data first
+        }
     }
     
     func setupCollectionView(){
@@ -54,24 +86,26 @@ extension PhotoCollectionView: UICollectionViewDelegate{
 
 extension PhotoCollectionView: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        entries.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = photoCollectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as! PhotoCollectionViewCell
+        cell.entry = entries[indexPath.row]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.delegate?.animateViewFrame(animation: .PhotoListToJournal)
+        let cell = photoCollectionView.cellForItem(at: indexPath) as! PhotoCollectionViewCell
+        self.delegate?.journalView.photoView.image = cell.photoView.image
+        self.delegate?.journalView.journalEntryTextView.text = entries[indexPath.row].textEntry
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
 }
-
 
 extension PhotoCollectionView: UICollectionViewDelegateFlowLayout {
     
@@ -99,6 +133,4 @@ extension PhotoCollectionView: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 40
     }
-    
-    
 }
