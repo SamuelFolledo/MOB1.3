@@ -64,7 +64,23 @@ class LoginView: UIView {
     
     //login logic
     @objc func login(){
-        delegate?.login()
+        guard let inputs: (email: String, password: String) = getEmailAndPassword() else { return }
+        delegate?.login(email: inputs.email, password: inputs.password)
+    }
+    
+    //get email and password, returns nil and display error message if they are empty
+    func getEmailAndPassword() -> (email: String, password: String)? {
+        let email = emailTextField.text
+        if email == "" {
+            delegate?.showErrorAlert(title: "Email", message: "The email field cannot be empty")
+            return nil
+        }
+        let password = passwordTextField.text
+        if password == "" {
+            delegate?.showErrorAlert(title: "Password", message: "The password field cannot be empty")
+            return nil
+        }
+        return (email!, password!)
     }
     
     override init(frame: CGRect){
@@ -91,7 +107,6 @@ class LoginView: UIView {
             emailTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             emailTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: screen.bounds.width / 1.5),
             
-            
             passwordTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
             passwordTextField.heightAnchor.constraint(equalToConstant: 25),
             passwordTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -102,12 +117,10 @@ class LoginView: UIView {
             loginButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
             loginButton.heightAnchor.constraint(equalToConstant: 25),
             
-            
             registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 20),
             registerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             registerButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
             registerButton.heightAnchor.constraint(equalToConstant: 25),
-        
         ])
     }
 }

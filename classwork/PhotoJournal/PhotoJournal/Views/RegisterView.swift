@@ -77,8 +77,24 @@ class RegisterView: UIView {
     }
     
     // calls the Viewcontrollers register method.
-    @objc func register(){
-        delegate?.register()
+    @objc func register() {
+        guard let inputs: (email: String, password: String) = getEmailAndPassword() else { return }
+        delegate?.register(email: inputs.email, password: inputs.password)
+    }
+    
+    //get email and password, returns nil and display error message if they are empty
+    func getEmailAndPassword() -> (email: String, password: String)? {
+        let email = emailTextField.text
+        if email == "" {
+            delegate?.showErrorAlert(title: "Email", message: "The email field cannot be empty")
+            return nil
+        }
+        let password = passwordTextField.text
+        if password == "" {
+            delegate?.showErrorAlert(title: "Password", message: "The password field cannot be empty")
+            return nil
+        }
+        return (email!, password!)
     }
     
     required init?(coder: NSCoder) {
@@ -100,7 +116,6 @@ class RegisterView: UIView {
             emailTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             emailTextField.topAnchor.constraint(equalTo: self.topAnchor, constant: screen.bounds.width / 1.5),
             
-            
             passwordTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
             passwordTextField.heightAnchor.constraint(equalToConstant: 25),
             passwordTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -111,7 +126,6 @@ class RegisterView: UIView {
             confirmPasswordTextField.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
             confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            
             registerButton.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 20),
             registerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             registerButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
@@ -121,7 +135,6 @@ class RegisterView: UIView {
             cancelButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             cancelButton.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 1.5),
             cancelButton.heightAnchor.constraint(equalToConstant: 25),
-        
         ])
     }
 }
