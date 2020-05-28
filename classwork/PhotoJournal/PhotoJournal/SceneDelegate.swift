@@ -25,9 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         FirebaseApp.configure()
         // nesting a viewController into a UINavigationview Controller
-        let navController = UINavigationController(rootViewController: LoginSignUpViewController())
-        // hidding navBar
-        navController.setNavigationBarHidden(true, animated: false)
+        var navController = UINavigationController(rootViewController: LoginSignUpViewController())
+        if UserDefaults.standard.string(forKey: "UserId") != nil { //check if we have a user previously logged in, then go to home page
+            navController = UINavigationController(rootViewController: PhotoJournalViewController())
+        } else { //no user then continue to login/register flow
+            // hidding navBar
+            navController.setNavigationBarHidden(true, animated: false)
+        }
         // assinging roootVC
         window?.rootViewController = navController
         window?.makeKeyAndVisible()

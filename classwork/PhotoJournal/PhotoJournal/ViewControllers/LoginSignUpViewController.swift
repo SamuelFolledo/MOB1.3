@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 // keep track of what we want to animate
 enum LoginVCTransitionAnims {
     case LoginToRegister
@@ -57,9 +59,9 @@ class LoginSignUpViewController: UIViewController {
         switch animation {
         case .LoginToRegister:
             UIView.animate(withDuration: 0.25) {
-                self.leadingAnchor?.isActive = false
-                self.leadingAnchor = self.loginView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -1 * self.screen.bounds.width)
-                self.leadingAnchor?.isActive = true
+                self.leadingAnchor?.isActive = false //reset leading anchor
+                self.leadingAnchor = self.loginView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -1 * self.screen.bounds.width) //set new leading anchor
+                self.leadingAnchor?.isActive = true //activate new leadhing anchor
                 self.view.layoutIfNeeded()
             }
             break
@@ -74,42 +76,32 @@ class LoginSignUpViewController: UIViewController {
         }
     }
     
-    func login(){
-        let email = loginView.emailTextField.text
-        if email == "" {
-            showErrorAlert(title: "Email", message: "The email field cannot be empty")
-            return
-        }
-        
-        let password = loginView.passwordTextField.text
-        if password == "" {
-            showErrorAlert(title: "Password", message: "The password field cannot be empty")
-            return
-        }
+    func login(email: String, password: String) {
         // login logic
-        let vc = PhotoJournalViewController()
-        vc.modalPresentationStyle = .currentContext
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.pushViewController(vc, animated: true)
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (authResult, error) in
+            guard let strongSelf = self else { return }
+            if let error = error {
+                strongSelf.showErrorAlert(title: "Login Error", message: error.localizedDescription)
+                return
+            }
+            //if no error
+            UserDefaults.standard.set(authResult!.user.uid, forKey: "UserId")
+            let vc = PhotoJournalViewController()
+            vc.modalPresentationStyle = .currentContext
+            strongSelf.navigationController?.setNavigationBarHidden(false, animated: true)
+            strongSelf.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
-    func register(){
-        let email = loginView.emailTextField.text
-        if email == "" {
-            showErrorAlert(title: "Email", message: "The email field cannot be empty")
-            return
-        }
-        
-        let password = loginView.passwordTextField.text
-        if password == "" {
-            showErrorAlert(title: "Password", message: "The password field cannot be empty")
-            return
-        }
+    func register(email: String, password: String) {
         // register logic
-        let vc = PhotoJournalViewController()
-        vc.modalPresentationStyle = .currentContext
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        self.navigationController?.pushViewController(vc, animated: true)
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+            if let error = error {
+                self.showErrorAlert(title: "Registration Error", message: error.localizedDescription)
+                return
+            }
+            self.login(email: email, password: password) //login after registering
+        }
     }
     
     func showErrorAlert(title: String, message: String) {

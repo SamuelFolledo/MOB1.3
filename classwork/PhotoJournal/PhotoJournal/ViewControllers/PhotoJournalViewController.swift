@@ -6,8 +6,10 @@
 //  Copyright © 2020 HazeStudio. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
 
 // animations we use through out the app
 enum PhotoVCTransitionAnims {
@@ -80,6 +82,13 @@ class PhotoJournalViewController: UIViewController {
     
     // function to log out
     @objc func logout(){
+        do {
+            try Auth.auth().signOut()
+        } catch let error as NSError {
+            print("Error logging out \(error.localizedDescription)")
+            return
+        }
+        UserDefaults.standard.removeObject(forKey: "UserId")
         self.navigationController?.popViewController(animated: true)
         self.navigationController?.viewControllers = [LoginSignUpViewController()]
     }
